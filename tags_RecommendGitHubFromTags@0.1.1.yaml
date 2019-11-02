@@ -1,0 +1,43 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Recommend GitHub From Tags"
+    description: "Recommend related github repos based on tags"
+    version: "0.1.1"
+    license: 
+      name: "apl"
+  paths: 
+    /tags/RecommendGitHubFromTags/0.1.1: 
+      post: 
+        summary: "Run RecommendGitHubFromTags"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  java: 
+                    type: "number"
+                  inference: 
+                    type: "number"
+              example: 
+                java: 6
+                inference: 7
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "string"
+                example: 
+                  - "/kadeng/pypgmc"
+                  - "/tomprimozic/type-systems"
+                  - "/bgamari/bayes-stack"
+                  - "/charlesflynn/agiledata"
+                  - "/Vhati/Slipstream-Mod-Manager"

@@ -1,0 +1,64 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "FpGrowth"
+    description: "A scalable method for finding frequent patterns within large datasets"
+    version: "0.2.0"
+    license: 
+      name: "apl"
+  paths: 
+    /paranoia/FpGrowth/0.2.0: 
+      post: 
+        summary: "Run FpGrowth"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  oneOf: 
+                    - 
+                      type: "string"
+                    - 
+                      type: "string"
+                    - 
+                      type: "number"
+                    - 
+                      type: "number"
+              example: 
+                - "data://paranoia/FpGrowthTestData/shopping.txt"
+                - 5
+                - 2
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "object"
+                    properties: 
+                      items: 
+                        type: "array"
+                        items: 
+                          type: "string"
+                      support: 
+                        type: "number"
+                    required: 
+                      - "items"
+                      - "support"
+                example: 
+                  - 
+                    items: 
+                      - "apples"
+                      - "beer"
+                    support: 6
+                  - 
+                    items: 
+                      - "beer"
+                      - "cheese"
+                    support: 5

@@ -1,0 +1,162 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Scrape RSS"
+    description: "Return title, link and comments for each item in an RSS feed"
+    version: "0.1.6"
+    license: 
+      name: "apl"
+  paths: 
+    /tags/ScrapeRSS/0.1.6: 
+      post: 
+        summary: "Run ScrapeRSS"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"https://news.ycombinator.com/rss\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "object"
+                    properties: 
+                      title: 
+                        type: "string"
+                      url: 
+                        type: "string"
+                      description: 
+                        type: "string"
+                    required: 
+                      - "title"
+                      - "url"
+                      - "description"
+                example: 
+                  - 
+                    title: "Waitin' (on Leiningen)"
+                    url: "http://swannodette.github.io/2014/12/22/waitin/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8790001\">Comments</a>"
+                  - 
+                    title: "Daala progress update"
+                    url: "https://people.xiph.org/~xiphmont/demo/daala/update1.shtml"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8790468\">Comments</a>"
+                  - 
+                    title: "Writers who will be entering the public domain in 2015 in many countries"
+                    url: "http://publicdomainreview.org/collections/class-of-2015/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8789329\">Comments</a>"
+                  - 
+                    title: "Plague"
+                    url: "http://plague.io/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8789384\">Comments</a>"
+                  - 
+                    title: "Bitcore ? A pure JavaScript Bitcoin API"
+                    url: "http://bitcore.io"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788747\">Comments</a>"
+                  - 
+                    title: "Flipping bits in memory without accessing them [pdf]"
+                    url: "https://www.ece.cmu.edu/~safari/pubs/kim-isca14.pdf"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788016\">Comments</a>"
+                  - 
+                    title: "Eggs Not Always What They're Cracked Up to Be"
+                    url: "http://www.npr.org/blogs/thesalt/2014/12/23/370377902/farm-fresh-natural-eggs-not-always-what-they-re-cracked-up-to-be"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8789530\">Comments</a>"
+                  - 
+                    title: "How Likely Is Someone Accused of Assault by Multiple People to Be Innocent?"
+                    url: "http://obsessionwithregression.blogspot.com/2014/12/how-likely-is-someone-accused-of.html"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788386\">Comments</a>"
+                  - 
+                    title: "Massively Multiplayer Online Drum Machine"
+                    url: "http://mmodm.co/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788970\">Comments</a>"
+                  - 
+                    title: "Docker Image Insecurity"
+                    url: "https://titanous.com/posts/docker-insecurity"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788770\">Comments</a>"
+                  - 
+                    title: "Bitshares Login"
+                    url: "http://bytemaster.bitshares.org/article/2014/12/22/BitShares-Login/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788676\">Comments</a>"
+                  - 
+                    title: "What Lies Below at the South Pole"
+                    url: "http://earthobservatory.nasa.gov/IOTD/view.php?id=84947"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788002\">Comments</a>"
+                  - 
+                    title: "Pitfalls of Callback-Based APIs"
+                    url: "http://thelig.ht/callbacks/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8789222\">Comments</a>"
+                  - 
+                    title: "GPGPU Accelerates PostgreSQL"
+                    url: "http://www.slideshare.net/kaigai/gpgpu-accelerates-postgresql"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8787414\">Comments</a>"
+                  - 
+                    title: "The Curious Case of the T.V. Attorney and Twitter"
+                    url: "https://www.popehat.com/2014/12/20/the-curious-case-of-the-t-v-attorney-and-twitter/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8789970\">Comments</a>"
+                  - 
+                    title: "Promises and Lisp"
+                    url: "http://lisper.in/promises/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788277\">Comments</a>"
+                  - 
+                    title: "Google has now ?forgotten? more than a quarter-million URLs"
+                    url: "http://www.washingtonpost.com/blogs/the-switch/wp/2014/12/22/google-has-now-forgotten-more-than-a-quarter-million-urls/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788405\">Comments</a>"
+                  - 
+                    title: "Make fleets as scalable as computing with RideCell (YC W12)"
+                    url: "https://news.ycombinator.com/item?id=8790138"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8790138\">Comments</a>"
+                  - 
+                    title: "The day the Pintupi Nine entered the modern world"
+                    url: "http://www.bbc.co.uk/news/magazine-30500591"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8787899\">Comments</a>"
+                  - 
+                    title: "Announcing remote system call support on bare metal"
+                    url: "http://permalink.gmane.org/gmane.comp.rumpkernel.user/627"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788315\">Comments</a>"
+                  - 
+                    title: "The Most Pinteresting People in the World"
+                    url: "https://medium.com/backchannel/how-people-youve-never-heard-of-got-to-be-the-most-powerful-users-on-pinterest-206770326006?curator=MediaREDEF"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788252\">Comments</a>"
+                  - 
+                    title: "Angara-5 to become Russia's biggest rocket"
+                    url: "http://www.russianspaceweb.com/angara5_flight1.html"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8787805\">Comments</a>"
+                  - 
+                    title: "Mix of Bacteria in Gut May Depend More on Diet Than Genes"
+                    url: "http://www.ucsf.edu/news/2014/12/122151/mix-bacteria-gut-may-depend-more-diet-genes"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788206\">Comments</a>"
+                  - 
+                    title: "Software engineering interview questions"
+                    url: "https://oj.leetcode.com/problems/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8789116\">Comments</a>"
+                  - 
+                    title: "The limits of my language are the limits of my world (2011)"
+                    url: "https://geopolicraticus.wordpress.com/2011/06/03/the-limits-of-my-language-are-the-limits-of-my-world/"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8787931\">Comments</a>"
+                  - 
+                    title: "My favourite interview question (2006)"
+                    url: "http://weblog.raganwald.com/2006/06/my-favourite-interview-question.html"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8788311\">Comments</a>"
+                  - 
+                    title: "How Victorian London Almost Ended Up with a Roman Sewer"
+                    url: "http://theappendix.net/issues/2014/10/how-victorian-london-almost-ended-up-with-a-roman-sewer"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8787826\">Comments</a>"
+                  - 
+                    title: "Show HN: Startup Fighter"
+                    url: "https://startupfighter.com"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8787733\">Comments</a>"
+                  - 
+                    title: "AWS Will Give You Credit for Completing These EdX Courses"
+                    url: "http://techcrunch.com/2014/12/23/amazon-web-services-will-give-you-1000-in-credit-for-completing-these-edx-courses/?ncid=rss"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8789305\">Comments</a>"
+                  - 
+                    title: "PHP 7's new hashtable implementation"
+                    url: "http://nikic.github.io/2014/12/22/PHPs-new-hashtable-implementation.html"
+                    description: "<a href=\"https://news.ycombinator.com/item?id=8786213\">Comments</a>"

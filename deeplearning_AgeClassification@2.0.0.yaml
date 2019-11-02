@@ -1,0 +1,118 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Age Classification"
+    description: "Classifies the age range of a person in a given image."
+    version: "2.0.0"
+    license: 
+      name: "apl"
+  paths: 
+    /deeplearning/AgeClassification/2.0.0: 
+      post: 
+        summary: "Run AgeClassification"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  image: 
+                    type: "string"
+              example: 
+                image: "data://deeplearning/example_data/veronika-balasyuk.jpg"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    results: 
+                      type: "array"
+                      items: 
+                        type: "object"
+                        properties: 
+                          age: 
+                            type: "array"
+                            items: 
+                              type: "object"
+                              properties: 
+                                ageRange: 
+                                  type: "object"
+                                  properties: 
+                                    max: 
+                                      type: "number"
+                                    min: 
+                                      type: "number"
+                                confidence: 
+                                  type: "number"
+                              required: 
+                                - "ageRange"
+                                - "confidence"
+                          bbox: 
+                            type: "object"
+                            properties: 
+                              bottom: 
+                                type: "number"
+                              left: 
+                                type: "number"
+                              right: 
+                                type: "number"
+                              top: 
+                                type: "number"
+                          person: 
+                            type: "number"
+                example: 
+                  results: 
+                    - 
+                      age: 
+                        - 
+                          ageRange: 
+                            max: 6
+                            min: 4
+                          confidence: 0.252856969833374
+                        - 
+                          ageRange: 
+                            max: 12
+                            min: 8
+                          confidence: 0.24691076576709747
+                        - 
+                          ageRange: 
+                            max: 32
+                            min: 25
+                          confidence: 0.2092548310756683
+                        - 
+                          ageRange: 
+                            max: 2
+                            min: 0
+                          confidence: 0.12406377494335176
+                        - 
+                          ageRange: 
+                            max: 20
+                            min: 15
+                          confidence: 0.09925682842731476
+                        - 
+                          ageRange: 
+                            max: 43
+                            min: 38
+                          confidence: 0.041676465421915054
+                        - 
+                          ageRange: 
+                            max: 53
+                            min: 48
+                          confidence: 0.02348341979086399
+                        - 
+                          ageRange: 
+                            max: 100
+                            min: 60
+                          confidence: 0.002496980596333742
+                      bbox: 
+                        bottom: 759
+                        left: 1632
+                        right: 2094
+                        top: 297
+                      person: 0

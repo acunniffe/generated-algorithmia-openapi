@@ -1,0 +1,93 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "LDA"
+    description: "LDA is a generative topic model extractor."
+    version: "1.0.0"
+    license: 
+      name: "apl"
+  paths: 
+    /nlp/LDA/1.0.0: 
+      post: 
+        summary: "Run LDA"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  docsList: 
+                    type: "array"
+                    items: 
+                      type: "string"
+                  mode: 
+                    type: "string"
+              example: 
+                docsList: 
+                  - "machine intelligence is the future"
+                  - "computer science students are in demand and they know it"
+                  - "I for one welcome our new machine overlords"
+                  - "the machines are taking over, and they’ve even got human names"
+                  - "superintelligent AI will takeover and rise"
+                mode: "quality"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "object"
+                    properties: 
+                      science: 
+                        type: "number"
+                      machine: 
+                        type: "number"
+                      future: 
+                        type: "number"
+                      taking: 
+                        type: "number"
+                      demand: 
+                        type: "number"
+                      human: 
+                        type: "number"
+                      students: 
+                        type: "number"
+                      takeover: 
+                        type: "number"
+                      names: 
+                        type: "number"
+                      computer: 
+                        type: "number"
+                      superintelligent: 
+                        type: "number"
+                      rise: 
+                        type: "number"
+                      machines: 
+                        type: "number"
+                      overlords: 
+                        type: "number"
+                    required: []
+                example: 
+                  - 
+                    science: 1
+                    machine: 1
+                  - 
+                    future: 1
+                  - 
+                    taking: 1
+                    demand: 1
+                    human: 1
+                    students: 1
+                    takeover: 1
+                    names: 1
+                    computer: 1
+                    superintelligent: 1
+                  - 
+                    rise: 1
+                    machines: 1
+                    overlords: 1

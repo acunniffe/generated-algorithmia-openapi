@@ -1,0 +1,33 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Sentence Split"
+    version: "0.1.0"
+    license: 
+      name: "apl"
+  paths: 
+    /StanfordNLP/SentenceSplit/0.1.0: 
+      post: 
+        summary: "Run SentenceSplit"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"This is a sentence. This is another sentence. And a third.\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "string"
+                example: 
+                  - "This is a sentence."
+                  - "This is another sentence."
+                  - "And a third."

@@ -1,0 +1,32 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Maze Generator"
+    description: "Generate mazes with long, winding pathways"
+    version: "0.1.0"
+    license: 
+      name: "apl"
+  paths: 
+    /kenny/MazeGen/0.1.0: 
+      post: 
+        summary: "Run MazeGen"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  type: "number"
+              example: 
+                - 12
+                - 12
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"

@@ -1,0 +1,34 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "RGB 2 Color Name"
+    description: "Get the name of the color closest to the three numbers specifying a color (RGB)"
+    version: "0.1.23"
+    license: 
+      name: "apl"
+  paths: 
+    /wilsonmar/RGB2ColorName/0.1.23: 
+      post: 
+        summary: "Run RGB2ColorName"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  type: "number"
+              example: 
+                - 221
+                - 18
+                - 137
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: "\"{\\\"ColorName\\\":\\\"Pantone 219 C\\\",\\\"ColorRGB\\\":[218,24,132],\\\"ColorHex\\\":\\\"#DA1884\\\",\\\"ColorDiff\\\":\\\"(-3,+6,-5)\\\"}\""

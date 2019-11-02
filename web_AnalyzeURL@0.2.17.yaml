@@ -1,0 +1,58 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Analyze URL"
+    description: "Get content and metadata for a URL"
+    version: "0.2.17"
+    license: 
+      name: "apl"
+  paths: 
+    /web/AnalyzeURL/0.2.17: 
+      post: 
+        summary: "Run AnalyzeURL"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  type: "string"
+              example: 
+                - "https://algorithmia.com/algorithms/weka/DigitRecognition"
+                - "weka"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    summary: 
+                      type: "string"
+                    date: 
+                      type: "string"
+                    thumbnail: 
+                      type: "string"
+                    marker: 
+                      type: "boolean"
+                    text: 
+                      type: "string"
+                    title: 
+                      type: "string"
+                    url: 
+                      type: "string"
+                    statusCode: 
+                      type: "number"
+                example: 
+                  summary: "The Digit Recognition algorithm that uses a Random Forest model trained on 50000 samples obtained from the MNIST digits dataset."
+                  date: ""
+                  thumbnail: ""
+                  marker: true
+                  text: "Toggle navigation Algorithms requests Bounties Active Fulfilled Algorithms Use Cases Pricing Blog Sign Up Sign In × Sign In Forgot password  Sign In Tweet DigitRecognition /weka/DigitRecognition Description The Digit Recognition algorithm that uses a Random Forest model trained on 50000 samples obtained from the MNIST digits dataset. Sample Input Sample Output Sample output is not available because there is no published version available. Sample output has not been generated. API Usage Examples cURL Java Scala JavaScript Python See Java Client Docs for how to add the Algorithmia Java Client as a dependency. See Scala Client Docs for how to add the Algorithmia Scala Client as a dependency. Download latest algorithmia.js Discussion weka (2398) Version 0.1.1 A later version is available: Publish as No published version Algorithm Called times Cost per Call Royalty: Free Royalty: Usage: 1 cr/sec Permissions Internet access May send your input data outside of Algorithmia Calls other algorithms May incur additional royalty and usage costs Help me understand these permissions. Source Availability Open Source Closed Source --Select a license-- Algorithmia Platform License Apache License 2.0 GNU GPL v3 MIT License Closed source Open source Input/Output Types Input: Instance Output: JsonObject Input: double[][] Output: JsonObject Input: double[] Output: JsonObject Tags (no tags) × Cancel Add Tag × Publish a new version of DigitRecognition Public use Private use Anybody can call this version. Note: Algorithms with at least one public version are listed in the Algorithmia marketplace and cannot be deleted. This version is only for private use. Note: Algorithms with at least one public version are listed in the Algorithmia marketplace and cannot be deleted. Current price for this minor version: Royalty-free Anybody who uses this algorithm will only be charged usage based on compute time. If your algorithm is open source, you will earn 1% of the usage cost. credits per call You will receive 70% of the royalty cost: {{(newCreditsPerCall*0.7).toFixed(2)}}cr per call. The maximum allowed price-per-call is 1000cr. Set a new price: Royalty-free Set royalty Anybody who uses this algorithm will only be charged usage based on compute time. If your algorithm is open source, you will earn 1% of the usage cost. Cost per call (currently {{currentCreditsPerCall}} credits per call) credits per call You will receive 70% of the royalty cost: {{(newCreditsPerCall*0.7).toFixed(2)}}cr per call. The maximum allowed price-per-call is 1000cr. Current permissions for this major version: Requires full access to the internet No internet access required Can call other algorithms Not allowed to call other algorithms Help me understand these permissions. Set new permissions: Requires full access to the internet No internet access required Can call other algorithms Not allowed to call other algorithms Help me understand these permissions. Cancel Publish Version Algorithmia 2015 About Terms Privacy Blog Jobs Contact × Send us a message Send"
+                  title: "DigitRecognition - Algorithmia"
+                  url: "https://algorithmia.com/algorithms/weka/DigitRecognition"
+                  statusCode: 200

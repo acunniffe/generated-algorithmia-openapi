@@ -1,0 +1,42 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Smart Thumbnail"
+    description: "Create a thumbnail based on the most relevant part of an image"
+    version: "2.2.3"
+    license: 
+      name: "apl"
+  paths: 
+    /opencv/SmartThumbnail/2.2.3: 
+      post: 
+        summary: "Run SmartThumbnail"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  image: 
+                    type: "string"
+                  outputUrl: 
+                    type: "string"
+                  height: 
+                    type: "number"
+                  width: 
+                    type: "number"
+              example: 
+                image: "data://opencv/temp_zeryx/5.png"
+                outputUrl: "data://.algo/temp/5_mapped.png"
+                height: 100
+                width: 50
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: "data://.algo/temp/5_mapped.png"

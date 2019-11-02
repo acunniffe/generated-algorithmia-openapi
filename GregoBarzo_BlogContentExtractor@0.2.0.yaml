@@ -1,0 +1,57 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Blog Post URL to Text and images"
+    description: " Extract main content, images and metadata for a blog or newspaper URL"
+    version: "0.2.0"
+    license: 
+      name: "apl"
+  paths: 
+    /GregoBarzo/BlogContentExtractor/0.2.0: 
+      post: 
+        summary: "Run BlogContentExtractor"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"https://techcrunch.com/2017/11/30/volvos-car-subscription-service-sounds-like-good-way-to-get-the-new-xc40/\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    article_url: 
+                      type: "string"
+                    author: 
+                      type: "string"
+                    body_text: 
+                      type: "string"
+                    description: 
+                      type: "string"
+                    image_count: 
+                      type: "number"
+                    images: 
+                      type: "array"
+                      items: 
+                        type: "string"
+                    title: 
+                      type: "string"
+                    word_count: 
+                      type: "number"
+                example: 
+                  article_url: "https://techcrunch.com/2017/11/30/volvos-car-subscription-service-sounds-like-good-way-to-get-the-new-xc40/"
+                  author: "Darrell Etherington"
+                  body_text: "Volvo has a subscription car service, whereby you can get a new vehicle for a flat monthly fee, including insurance, maintenance and service. It’s not the first carmaker to provide this kind of ownership alternative, but it may have the best deal in the business at the moment, with its ‘Care by Volvo’ exclusively for the new XC40 SUV.The deal works thusly: Pay a monthly fee starting $600 per month, and you get the 2019 XC40, with a range of nice options and upgrades available if you’re willing to pay a bit more. That subscription price includes everything – vehicle insurance, regular service, and even maintenance fees. You just handle the local taxes, along with any state required registration fees, and you also pay for gas.Based on my current lease, this sounds like a pretty fantastic deal, given that the trim level you’re getting at $600 per month costs $35,200 to purchase outright, and that’s without taking into consideration any maintenance or insurance and financing fees.The XC40 is a compact SUV designed for city dwellers, and that’s a prime market for this kind of ownership alternative. The fee includes roadside assistance, as well as a 15,000 annual mileage allowance, and when customers sign up they sign up only for 24 month terms – with an option to switch cars and renew for a new 24 month term as early as a year into the initial agreement.Subscription sign-ups are available now at Volvo’s website, with the first deliveries set to start early in spring, 2018. As a current leaseholder who values the ability to get a new car relatively frequently but would love to not worry about anything beyond a single, all-in fee, and get the option to switch things up a bit more easily, here’s hoping this catches on and becomes a more widespread trend."
+                  description: "Volvo has a subscription car service, whereby you can get a new vehicle for a flat monthly fee, including insurance, maintenance and service. It's not the.."
+                  image_count: 1
+                  images: 
+                    - "https://tctechcrunch2011.files.wordpress.com/2017/11/216702_new_volvo_xc40_exterior.jpg?w=738"
+                  title: "Volvo’s car subscription service sounds like good way to get the new XC40"
+                  word_count: 309

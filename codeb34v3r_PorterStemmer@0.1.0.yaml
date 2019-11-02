@@ -1,0 +1,27 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "PorterStemmer"
+    version: "0.1.0"
+    license: 
+      name: "apl"
+  paths: 
+    /codeb34v3r/PorterStemmer/0.1.0: 
+      post: 
+        summary: "Run PorterStemmer"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "source >> sourc\ncoupled >> coupl\naccompanying >> accompani"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"

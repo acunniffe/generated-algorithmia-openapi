@@ -1,0 +1,40 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "SalNet: Deep Convolutional Networks for Saliency Prediction"
+    description: "Automatically detects the most relevant parts in an image."
+    version: "0.2.2"
+    license: 
+      name: "apl"
+  paths: 
+    /deeplearning/SalNet/0.2.2: 
+      post: 
+        summary: "Run SalNet"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  image: 
+                    type: "string"
+              example: 
+                image: "https://en.wikipedia.org/wiki/File:Mona_Lisa_(copy,_Hermitage).jpg"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    output: 
+                      type: "string"
+                    saliencyMatrix: 
+                      type: "string"
+                example: 
+                  output: "data://.algo/deeplearning/SalNet/temp/File:Mona_Lisa_(copy,_Hermitage).jpg"
+                  saliencyMatrix: "data://.algo/deeplearning/SalNet/temp/saliencyMatrix.json"

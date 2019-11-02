@@ -1,0 +1,29 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Colorization Demo"
+    description: "calls colorizer and adds Algorithmia watermark"
+    version: "1.1.23"
+    license: 
+      name: "apl"
+  paths: 
+    /algorithmiahq/ColorizationDemo/1.1.23: 
+      post: 
+        summary: "Run ColorizationDemo"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: ""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: ""

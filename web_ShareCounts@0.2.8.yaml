@@ -1,0 +1,45 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Count Social Shares"
+    description: "Retrieve the current Facebook, LinkedIn, and Pinterest share counts"
+    version: "0.2.8"
+    license: 
+      name: "apl"
+  paths: 
+    /web/ShareCounts/0.2.8: 
+      post: 
+        summary: "Run ShareCounts"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"http://algorithmia.com\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    facebook_likes: 
+                      type: "number"
+                    facebook_shares: 
+                      type: "number"
+                    pinterest: 
+                      type: "number"
+                    facebook_comments: 
+                      type: "number"
+                    linkedIn: 
+                      type: "number"
+                example: 
+                  facebook_likes: 1
+                  facebook_shares: 1150
+                  pinterest: 0
+                  facebook_comments: 0
+                  linkedIn: 327

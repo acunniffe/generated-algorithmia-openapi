@@ -1,0 +1,102 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Bounding Box On Image"
+    description: "Draw bounding boxes on a given image."
+    version: "0.1.1"
+    license: 
+      name: "apl"
+  paths: 
+    /util/BoundingBoxOnImage/0.1.1: 
+      post: 
+        summary: "Run BoundingBoxOnImage"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  imageUrl: 
+                    type: "string"
+                  imageSaveUrl: 
+                    type: "string"
+                  boundingBoxes: 
+                    type: "array"
+                    items: 
+                      type: "object"
+                      properties: 
+                        coordinates: 
+                          type: "object"
+                          properties: 
+                            left: 
+                              type: "number"
+                            right: 
+                              type: "number"
+                            top: 
+                              type: "number"
+                            bottom: 
+                              type: "number"
+                        textObjects: 
+                          type: "array"
+                          items: 
+                            type: "object"
+                            properties: 
+                              text: 
+                                type: "string"
+                              position: 
+                                type: "string"
+                            required: 
+                              - "text"
+                              - "position"
+                      required: 
+                        - "coordinates"
+                        - "textObjects"
+              example: 
+                imageUrl: "data://util/BoundingBoxOnImage/three_people.jpg"
+                imageSaveUrl: "data://.algo/util/BoundingBoxOnImage/temp/output_2.png"
+                boundingBoxes: 
+                  - 
+                    coordinates: 
+                      left: 1678
+                      right: 1900
+                      top: 1084
+                      bottom: 1307
+                    textObjects: 
+                      - 
+                        text: "Emily"
+                        position: "bottom"
+                  - 
+                    coordinates: 
+                      left: 2306
+                      right: 2491
+                      top: 1089
+                      bottom: 1274
+                    textObjects: 
+                      - 
+                        text: "Jay"
+                        position: "top"
+                  - 
+                    coordinates: 
+                      left: 3015
+                      right: 3238
+                      top: 910
+                      bottom: 1133
+                    textObjects: 
+                      - 
+                        text: "Jack"
+                        position: "bottom"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    output: 
+                      type: "string"
+                example: 
+                  output: "data://.algo/util/BoundingBoxOnImage/temp/output_2.png"

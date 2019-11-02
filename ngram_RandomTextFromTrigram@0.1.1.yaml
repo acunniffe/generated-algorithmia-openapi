@@ -1,0 +1,33 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Random Text From Trigram"
+    version: "0.1.1"
+    license: 
+      name: "apl"
+  paths: 
+    /ngram/RandomTextFromTrigram/0.1.1: 
+      post: 
+        summary: "Run RandomTextFromTrigram"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  type: "string"
+              example: 
+                - "data://ngram/tweets/doppenhe-3grams.txt"
+                - "xxBeGiN142xx"
+                - "xxEnD142xx"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: "\"RT @m_stephenson_: @benskiddle @algorithmia Its a fantastic model, and some REALLY useful stuff. Ive tested 1 or 2. Great support too\""

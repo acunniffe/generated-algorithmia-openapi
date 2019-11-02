@@ -1,0 +1,45 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Geo Distance"
+    description: "Gives the distance between two coordinates."
+    version: "0.1.1"
+    license: 
+      name: "apl"
+  paths: 
+    /Geo/GeoDistance/0.1.1: 
+      post: 
+        summary: "Run GeoDistance"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  lat1: 
+                    type: "number"
+                  lon1: 
+                    type: "number"
+                  lat2: 
+                    type: "number"
+                  lon2: 
+                    type: "number"
+                  type: 
+                    type: "string"
+              example: 
+                lat1: 47.601518
+                lon1: -122.334297
+                lat2: 47.679217
+                lon2: -122.386031
+                type: "miles"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "number"
+                example: 5.88637243160366

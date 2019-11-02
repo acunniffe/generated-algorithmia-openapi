@@ -1,0 +1,43 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Sentiment Analysis"
+    description: "Determine positive or negative sentiment from text"
+    version: "1.0.5"
+    license: 
+      name: "apl"
+  paths: 
+    /nlp/SentimentAnalysis/1.0.5: 
+      post: 
+        summary: "Run SentimentAnalysis"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  document: 
+                    type: "string"
+              example: 
+                document: "I really like Algorithmia!"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "object"
+                    properties: 
+                      sentiment: 
+                        type: "number"
+                      document: 
+                        type: "string"
+                example: 
+                  - 
+                    sentiment: 0.474
+                    document: "I really like Algorithmia!"

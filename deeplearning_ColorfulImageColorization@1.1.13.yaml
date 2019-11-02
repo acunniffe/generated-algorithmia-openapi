@@ -1,0 +1,37 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Colorful Image Colorization"
+    description: "Colorizes given black & white images."
+    version: "1.1.13"
+    license: 
+      name: "apl"
+  paths: 
+    /deeplearning/ColorfulImageColorization/1.1.13: 
+      post: 
+        summary: "Run ColorfulImageColorization"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  image: 
+                    type: "string"
+              example: 
+                image: "data://deeplearning/example_data/lincoln.jpg"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    output: 
+                      type: "string"
+                example: 
+                  output: "data://.algo/deeplearning/ColorfulImageColorization/temp/lincoln.png"

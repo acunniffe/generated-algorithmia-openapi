@@ -1,0 +1,57 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Profanity Detection"
+    description: "Detect profanity in text automatically"
+    version: "1.0.0"
+    license: 
+      name: "apl"
+  paths: 
+    /nlp/ProfanityDetection/1.0.0: 
+      post: 
+        summary: "Run ProfanityDetection"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  oneOf: 
+                    - 
+                      type: "string"
+                    - 
+                      type: "string"
+                    - 
+                      type: "string"
+                    - 
+                      type: "boolean"
+              example: 
+                - "He is acting like a damn jackass, and as far as I'm concerned he can frack off."
+                - 
+                  - "frack"
+                  - "cussed"
+                - false
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    ass: 
+                      type: "number"
+                    damn: 
+                      type: "number"
+                    jackass: 
+                      type: "number"
+                    frack: 
+                      type: "number"
+                example: 
+                  ass: 1
+                  damn: 1
+                  jackass: 1
+                  frack: 1

@@ -1,0 +1,44 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Antennas"
+    description: "Find US based Antennas"
+    version: "1.0.1"
+    license: 
+      name: "mit"
+  paths: 
+    /baseline/Antennas/1.0.1: 
+      post: 
+        summary: "Run Antennas"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  minLatitude: 
+                    type: "number"
+                  maxLatitude: 
+                    type: "number"
+                  minLongitude: 
+                    type: "number"
+                  maxLongitude: 
+                    type: "number"
+                  limit: 
+                    type: "number"
+              example: 
+                minLatitude: 26.4386
+                maxLatitude: 49.6729
+                minLongitude: -130.3881
+                maxLongitude: -69.6118
+                limit: 50
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"

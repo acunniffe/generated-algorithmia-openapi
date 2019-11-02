@@ -1,0 +1,28 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Lemmatizer"
+    version: "0.1.0"
+    license: 
+      name: "apl"
+  paths: 
+    /StanfordNLP/Lemmatizer/0.1.0: 
+      post: 
+        summary: "Run Lemmatizer"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"He is running away.\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: "\"he be run away.\""

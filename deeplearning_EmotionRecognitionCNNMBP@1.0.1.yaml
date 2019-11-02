@@ -1,0 +1,97 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Emotion Recognition in the Wild via Convolutional Neural Networks and Mapped Binary Patterns"
+    description: "Autodetects emotions in the given image."
+    version: "1.0.1"
+    license: 
+      name: "apl"
+  paths: 
+    /deeplearning/EmotionRecognitionCNNMBP/1.0.1: 
+      post: 
+        summary: "Run EmotionRecognitionCNNMBP"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  image: 
+                    type: "string"
+                  numResults: 
+                    type: "number"
+              example: 
+                image: "data://deeplearning/example_data/elon_musk.jpg"
+                numResults: 7
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    results: 
+                      type: "array"
+                      items: 
+                        type: "object"
+                        properties: 
+                          bbox: 
+                            type: "object"
+                            properties: 
+                              bottom: 
+                                type: "number"
+                              left: 
+                                type: "number"
+                              right: 
+                                type: "number"
+                              top: 
+                                type: "number"
+                          emotions: 
+                            type: "array"
+                            items: 
+                              type: "object"
+                              properties: 
+                                confidence: 
+                                  type: "number"
+                                label: 
+                                  type: "string"
+                              required: 
+                                - "confidence"
+                                - "label"
+                          person: 
+                            type: "number"
+                example: 
+                  results: 
+                    - 
+                      bbox: 
+                        bottom: 911
+                        left: 295
+                        right: 849
+                        top: 357
+                      emotions: 
+                        - 
+                          confidence: 0.9386989
+                          label: "Happy"
+                        - 
+                          confidence: 0.0483937
+                          label: "Neutral"
+                        - 
+                          confidence: 0.0120008
+                          label: "Disgust"
+                        - 
+                          confidence: 0.000406
+                          label: "Sad"
+                        - 
+                          confidence: 0.0003461
+                          label: "Fear"
+                        - 
+                          confidence: 0.00015
+                          label: "Angry"
+                        - 
+                          confidence: 0.0000046
+                          label: "Surprise"
+                      person: 0

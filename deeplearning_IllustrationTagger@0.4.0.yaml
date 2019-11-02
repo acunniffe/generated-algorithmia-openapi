@@ -1,0 +1,98 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Illustration Tagger"
+    description: "Automagically tag your images."
+    version: "0.4.0"
+    license: 
+      name: "apl"
+  paths: 
+    /deeplearning/IllustrationTagger/0.4.0: 
+      post: 
+        summary: "Run IllustrationTagger"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  image: 
+                    type: "string"
+              example: 
+                image: "data://deeplearning/example_data/trudeau.jpg"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    character: 
+                      type: "array"
+                      items: {}
+                    copyright: 
+                      type: "array"
+                      items: 
+                        type: "object"
+                        properties: 
+                          real life: 
+                            type: "number"
+                    general: 
+                      type: "array"
+                      items: 
+                        type: "object"
+                        properties: 
+                          1boy: 
+                            type: "number"
+                          solo: 
+                            type: "number"
+                          male: 
+                            type: "number"
+                          black hair: 
+                            type: "number"
+                          necktie: 
+                            type: "number"
+                          formal: 
+                            type: "number"
+                        required: []
+                    rating: 
+                      type: "array"
+                      items: 
+                        type: "object"
+                        properties: 
+                          safe: 
+                            type: "number"
+                          questionable: 
+                            type: "number"
+                          explicit: 
+                            type: "number"
+                        required: []
+                example: 
+                  character: []
+                  copyright: 
+                    - 
+                      real life: 0.3819650411605835
+                  general: 
+                    - 
+                      1boy: 0.9390615820884703
+                    - 
+                      solo: 0.9158311486244202
+                    - 
+                      male: 0.6592671275138855
+                    - 
+                      black hair: 0.4281844198703766
+                    - 
+                      necktie: 0.2363460510969162
+                    - 
+                      formal: 0.2307535260915756
+                  rating: 
+                    - 
+                      safe: 0.9924461245536804
+                    - 
+                      questionable: 0.006749283988028765
+                    - 
+                      explicit: 0.0001874927111202851

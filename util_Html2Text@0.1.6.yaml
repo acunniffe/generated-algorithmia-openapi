@@ -1,0 +1,29 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Html 2 Text"
+    description: "Extract main text content from a URL"
+    version: "0.1.6"
+    license: 
+      name: "apl"
+  paths: 
+    /util/Html2Text/0.1.6: 
+      post: 
+        summary: "Run Html2Text"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"http://algorithmia.com/\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: "\"We're building a community around state-of-the-art algorithm development, where users can create, share and build on other algorithms, and then instantly make them available as a web service. Explore algorithms or create and share your own. Algorithmia is a first-of-its-kind marketplace built by algorithm developers for algorithm developers. Sharing source code is great, sharing a fully functioning service is even better. Algorithmia allows you to upload your code, and instantly make it available as a REST API for the world to use. From code to live web service in seconds. Algorithmia allows your code to be live instantly by providing an easy interface to create and publish your algorithms. No setup required, we handle all the infrastructure. Any time your algorithm is called by our API you have an opportunity to earn $ for your hard work. Call the entire library of algorithms through the Algorithmia API from any type of application. Reference and use any other algorithm available on Algorithmia inside your own algorithm code. When their performance improves, so does yours.\""

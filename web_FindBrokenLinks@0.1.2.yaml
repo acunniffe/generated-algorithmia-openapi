@@ -1,0 +1,35 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Find Broken Links"
+    description: "Find broken links in a given webpage"
+    version: "0.1.2"
+    license: 
+      name: "apl"
+  paths: 
+    /web/FindBrokenLinks/0.1.2: 
+      post: 
+        summary: "Run FindBrokenLinks"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"http://techland.time.com/2013/09/20/50-best-iphone-apps-2013-edition/\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "string"
+                example: 
+                  - "http://apps.innteach.com"
+                  - "http://techtimes.co/android-iphone-ipad/top-10-apps-iphone-2013/"
+                  - "https://twitter.com/intent/tweet?url=http%3A%2F%2Fti.me%2F19jG3a9&text=From Mainstay Essentials to Notable Newcomers: 50 Best iPhone Apps |&via=techland"
+                  - "http://mixx.com/submit?url=http%3A%2F%2Ftechland.time.com%2F2013%2F09%2F20%2F50-best-iphone-apps-2013-edition%2F&title=50+Best+iPhone+Apps%2C+2013+Edition"

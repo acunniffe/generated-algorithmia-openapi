@@ -1,0 +1,44 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Get image links"
+    description: "Get all images links from any url"
+    version: "0.1.0"
+    license: 
+      name: "apl"
+  paths: 
+    /diego/Getimagelinks/0.1.0: 
+      post: 
+        summary: "Run Getimagelinks"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"http://www.algorithmia.com\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "string"
+                example: 
+                  - "http://www.algorithmia.com/assets/images/logo-small.png"
+                  - "http://www.algorithmia.com/versioned/images/covers/ea736794914cbe7ff32df1ee84c2f642-Tracking-Economic-Development.jpg"
+                  - "http://www.algorithmia.com/versioned/images/covers/85be378565ac24a6d6d7216971944556-Smart-News-Readers.jpg"
+                  - "http://www.algorithmia.com/versioned/images/covers/d25d7ceb92a01e95dab49e4bbd18a89e-Visualize-Search-Engine-Mappings.jpg"
+                  - "http://www.algorithmia.com/versioned/images/covers/5d25479eecfa6f1929202be5afd28dcc-Automated-Nudity-Detection.jpg"
+                  - "http://www.algorithmia.com/assets/images/press/wired.png"
+                  - "http://www.algorithmia.com/assets/images/press/techcrunch.png"
+                  - "http://www.algorithmia.com/assets/images/press/xconomy.png"
+                  - "http://www.algorithmia.com/assets/images/press/mit.png"
+                  - "http://www.algorithmia.com/assets/images/press/infoworld.png"
+                  - "http://www.algorithmia.com/assets/images/press/bostonglobe.png"
+                  - "http://www.algorithmia.com/versioned/images/new-landing/5fc5cebfb2a914e0b6385f80e63947d6-icon-quote.png"
+                  - "http://www.algorithmia.com/versioned/images/cfd8ff55c0ea1ec1ae03c620f8f18a0b-favicon-white.png"

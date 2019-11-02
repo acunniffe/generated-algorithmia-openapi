@@ -1,0 +1,29 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Url 2 Text"
+    description: "Extract main text content from a URL"
+    version: "0.1.4"
+    license: 
+      name: "apl"
+  paths: 
+    /util/Url2Text/0.1.4: 
+      post: 
+        summary: "Run Url2Text"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"http://github.com\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: "Use at least one lowercase letter, one numeral, and seven characters. By clicking \"Sign up for GitHub\", you agree to our terms of service and privacy policy. We will send you account related emails occasionally. Powerful collaboration, code review, and code management for open source and private projects. Need private repositories? Upgraded plans start at $7/mo. Now available on AWS. Powerful features to make software development more collaborative. Review changes, comment on lines of code, report issues, and plan the future of your project with discussion tools. Work with project collaborators or teams of people in organization accounts to communicate with ease. Share your projects with the world, get feedback, and contribute to millions of repositories hosted on GitHub. Discover applications and tools that integrate with GitHub to help you and your team build software better, together. OS X 10.9 or later. Learn more For Windows Vista, 7, 8, & 8.1 · Learn more"

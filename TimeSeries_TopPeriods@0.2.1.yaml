@@ -1,0 +1,39 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Top Periods"
+    description: "Finds the longest periods in a dataset"
+    version: "0.2.1"
+    license: 
+      name: "apl"
+  paths: 
+    /TimeSeries/TopPeriods/0.2.1: 
+      post: 
+        summary: "Run TopPeriods"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  type: "number"
+              example: 
+                - 3
+                - 5
+                - 7
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "number"
+                example: 
+                  - 0
+                  - 0
+                  - 0

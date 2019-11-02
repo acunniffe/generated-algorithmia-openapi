@@ -1,0 +1,142 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Site Map"
+    description: "Crawls a website and returns a site map"
+    version: "0.1.7"
+    license: 
+      name: "apl"
+  paths: 
+    /web/SiteMap/0.1.7: 
+      post: 
+        summary: "Run SiteMap"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  oneOf: 
+                    - 
+                      type: "string"
+                    - 
+                      type: "string"
+                    - 
+                      type: "number"
+              example: 
+                - "http://algorithmia.com"
+                - 1
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    http://algorithmia.com/reset: 
+                      type: "array"
+                      items: 
+                        type: "string"
+                    http://algorithmia.com/about: 
+                      type: "array"
+                      items: 
+                        type: "string"
+                    http://algorithmia.com/contact: 
+                      type: "array"
+                      items: 
+                        type: "string"
+                    http://algorithmia.com/privacy: 
+                      type: "array"
+                      items: 
+                        type: "string"
+                    http://algorithmia.com/terms: 
+                      type: "array"
+                      items: 
+                        type: "string"
+                    http://algorithmia.com: 
+                      type: "array"
+                      items: 
+                        type: "string"
+                    http://algorithmia.com/signin: 
+                      type: "array"
+                      items: 
+                        type: "string"
+                    http://algorithmia.com/: 
+                      type: "array"
+                      items: 
+                        type: "string"
+                example: 
+                  http://algorithmia.com/reset: 
+                    - "http://algorithmia.com/reset"
+                    - "http://algorithmia.com/about"
+                    - "http://algorithmia.com/contact"
+                    - "http://algorithmia.com/privacy"
+                    - "http://algorithmia.com/terms"
+                    - "https://algorithmia.com/signin"
+                    - "http://algorithmia.com/signin"
+                    - "http://algorithmia.com/"
+                  http://algorithmia.com/about: 
+                    - "http://algorithmia.com/reset"
+                    - "http://algorithmia.com/about"
+                    - "http://algorithmia.com/contact"
+                    - "http://algorithmia.com/api"
+                    - "http://algorithmia.com/privacy"
+                    - "http://algorithmia.com/terms"
+                    - "http://algorithmia.com/signin"
+                    - "http://algorithmia.com/"
+                  http://algorithmia.com/contact: 
+                    - "http://algorithmia.com/reset"
+                    - "http://algorithmia.com/about"
+                    - "http://algorithmia.com/contact"
+                    - "http://algorithmia.com/privacy"
+                    - "http://algorithmia.com/terms"
+                    - "http://algorithmia.com/signin"
+                    - "http://algorithmia.com/"
+                  http://algorithmia.com/privacy: 
+                    - "http://algorithmia.com/reset"
+                    - "http://algorithmia.com/about"
+                    - "http://algorithmia.com/contact"
+                    - "http://algorithmia.com/privacy"
+                    - "http://algorithmia.com/terms"
+                    - "http://algorithmia.com/signin"
+                    - "http://algorithmia.com/"
+                  http://algorithmia.com/terms: 
+                    - "http://algorithmia.com/reset"
+                    - "http://algorithmia.com/about"
+                    - "http://algorithmia.com/contact"
+                    - "http://algorithmia.com/api_dev_terms"
+                    - "http://algorithmia.com/privacy"
+                    - "http://algorithmia.com/terms"
+                    - "http://algorithmia.com/signin"
+                    - "https://algorithmia.com/optout"
+                    - "http://algorithmia.com/bounty_terms"
+                    - "http://algorithmia.com/"
+                  http://algorithmia.com: 
+                    - "http://algorithmia.com/reset"
+                    - "http://algorithmia.com/about"
+                    - "http://algorithmia.com/contact"
+                    - "http://algorithmia.com/privacy"
+                    - "http://algorithmia.com/terms"
+                    - "http://algorithmia.com/signin"
+                    - "http://algorithmia.com/"
+                  http://algorithmia.com/signin: 
+                    - "http://algorithmia.com/reset"
+                    - "http://algorithmia.com/about"
+                    - "http://algorithmia.com/contact"
+                    - "http://algorithmia.com/privacy"
+                    - "http://algorithmia.com/terms"
+                    - "http://algorithmia.com/signin"
+                    - "http://algorithmia.com/signup"
+                    - "http://algorithmia.com/"
+                  http://algorithmia.com/: 
+                    - "http://algorithmia.com/reset"
+                    - "http://algorithmia.com/about"
+                    - "http://algorithmia.com/contact"
+                    - "http://algorithmia.com/privacy"
+                    - "http://algorithmia.com/terms"
+                    - "http://algorithmia.com/signin"
+                    - "http://algorithmia.com/"

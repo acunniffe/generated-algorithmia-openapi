@@ -1,0 +1,45 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Linear Detrend"
+    description: "Fits a linear trend to the given dataset, and returns the linear trend subtracted out"
+    version: "0.1.1"
+    license: 
+      name: "apl"
+  paths: 
+    /TimeSeries/LinearDetrend/0.1.1: 
+      post: 
+        summary: "Run LinearDetrend"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  type: "number"
+              example: 
+                - 0.1
+                - 0.9
+                - 1.8
+                - 3
+                - 4.1
+                - 5.2
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "number"
+                example: 
+                  - 0.1761904761904765
+                  - -0.060952380952380605
+                  - -0.1980952380952377
+                  - -0.035238095238094694
+                  - 0.027619047619047585
+                  - 0.09047619047619075

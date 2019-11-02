@@ -1,0 +1,112 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Web Page Recommender"
+    description: "Recommend similar pages for any domain"
+    version: "0.1.40"
+    license: 
+      name: "apl"
+  paths: 
+    /web/WebPageRecommender/0.1.40: 
+      post: 
+        summary: "Run WebPageRecommender"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  oneOf: 
+                    - 
+                      type: "string"
+                    - 
+                      type: "string"
+                    - 
+                      type: "string"
+                    - 
+                      type: "number"
+              example: 
+                - "http://www.geekwire.com/2015/this-startup-created-an-algorithm-that-detects-nude-images-online/"
+                - "731509d0bcf645c6b16b5927645d641e"
+                - 12
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    recs: 
+                      type: "array"
+                      items: 
+                        type: "object"
+                        properties: 
+                          url: 
+                            type: "string"
+                          title: 
+                            type: "string"
+                          summary: 
+                            type: "string"
+                          thumbnail: 
+                            type: "string"
+                        required: 
+                          - "url"
+                          - "title"
+                          - "summary"
+                          - "thumbnail"
+                example: 
+                  recs: 
+                    - 
+                      url: "http://www.geekwire.com/2015/paul-allens-artificial-intelligence-institute-launches-startup-incubator-with-top-minds-in-ai/"
+                      title: "Paul Allen's Artificial Intelligence Institute launches startup incubator with top minds in AI"
+                      summary: "The Allen Institute for Artificial Intelligence has established a new startup incubator at its offices in Seattle, recruiting two high-level researchers wh"
+                      thumbnail: "http://cdn.geekwire.com/wp-content/uploads/2015/05/ai-institute.jpg"
+                    - 
+                      url: "http://www.geekwire.com/2015/meet-the-tiny-seattle-startup-helping-twitter-solve-its-diversity-problems-one-job-posting-at-a-time/"
+                      title: "Meet the tiny Seattle startup helping Twitter solve its diversity problems, one job posting at a time"
+                      summary: "Twitter raised the bar for the conversation around diversity in the technology industry on Friday, not just releasing its own women and minority statistics"
+                      thumbnail: "http://cdn.geekwire.com/wp-content/uploads/2015/08/Screen-Shot-2015-08-28-at-2.53.23-PM-300x127.png"
+                    - 
+                      url: "http://www.geekwire.com/2015/ex-microsoft-manager-raises-6m-for-cloud-startup-icertis/"
+                      title: "Ex-Microsoft manager raises $6M for cloud startup Icertis"
+                      summary: "Icertis, a Bellevue-based cloud startup led by former Microsoft manager Samir Bodas, has raised $6 million in venture funding from Greycroft Partners and F"
+                      thumbnail: "http://cdn.geekwire.com/wp-content/uploads/2015/04/bodas-samir.jpg"
+                    - 
+                      url: "http://www.geekwire.com/2015/auth0-secures-6-9m-in-funding-to-simplify-building-user-logins/"
+                      title: "Auth0 secures $6.9M to help app developers simplify user logins"
+                      summary: "Bellevue-based Auth0 announced today that it has raised $6.9 million in funding. The startup provides a way for developers to easily set up authentication"
+                      thumbnail: "http://cdn.geekwire.com/wp-content/uploads/2015/06/AAEAAQAAAAAAAAJmAAAAJDUxZTg1NzljLWUxZTgtNDYyOC04ZGEwLTZiYmFmMTk4YjY5OQ.jpg"
+                    - 
+                      url: "http://www.geekwire.com/2015/tableau-software-posts-150-million-in-q2-revenue-shares-slump-as-growth-rate-slows/"
+                      title: "Tableau Software posts $150M in Q2 revenue, shares slump as growth rate slows"
+                      summary: "Tableau Software today reported $149.9 million in revenue, a 65 percent increase over the same period last year as the company added 3,000 new customers. T"
+                      thumbnail: "http://cdn.geekwire.com/wp-content/uploads/2014/09/tableau-chabot111.jpg"
+                    - 
+                      url: "http://www.geekwire.com/2015/hp-taps-browsium-to-enable-legacy-web-apps-on-ie11-for-enterprise-users/"
+                      title: "HP taps Browsium to enable legacy web apps on IE11 for enterprise users"
+                      summary: "With large companies relying on a huge number of web apps to conduct day-to-day business, migrating to an updated browser can cause a lot of problems. Ente"
+                      thumbnail: "http://cdn.geekwire.com/wp-content/uploads/2015/09/Browsium-logo-1000x250.png"
+                    - 
+                      url: "http://www.geekwire.com/2015/party-like-its-1995-microsoft-vets-to-host-epic-party-to-celebrate-20-year-anniversary-of-windows-95/"
+                      title: "Party like it's 1995: Microsoft vets to host epic party to celebrate 20-year anniversary of Windows 95"
+                      summary: "Windows 10 is already shaping up to be a big launch for Microsoft, but it's always going to be hard to live up to the aura that surrounds one of the bigges"
+                      thumbnail: "http://cdn.geekwire.com/wp-content/uploads/2015/07/78d9d0dc-820a-47bb-baf3-b9aed638786e_6.jpg"
+                    - 
+                      url: "http://www.geekwire.com/2015/zillow-ceo-spencer-rascoff-venture-capitalist-nick-hanauer-join-geekwire-summit-lineup/"
+                      title: "Zillow Group CEO Spencer Rascoff, venture capitalist Nick Hanauer join GeekWire Summit lineup"
+                      summary: "The 2015 GeekWire Summit — our biggest tech conference of the year — is coming up on Oct. 1-2 and today we're excited to announce two great additions to th"
+                      thumbnail: "http://cdn.geekwire.com/wp-content/uploads/2014/10/Spencer-Rascoff-Zillow-Premier-Agent-Forum.jpg"
+                    - 
+                      url: "http://www.geekwire.com/2015/geekwire-calendar-picks-linuxcon-containercon-cloudopen-and-openstack-day-in-seattle/"
+                      title: "GeekWire Calendar Picks: LinuxCon, ContainerCon, CloudOpen and OpenStack Day in Seattle"
+                      summary: "Next week is a big one for open-source and cloud technologies in Seattle: The Linux Foundation is bringing its flagship LinuxCon North America event to the"
+                      thumbnail: "http://cdn.geekwire.com/wp-content/uploads/2015/08/linuxcon-620x191.png"
+                    - 
+                      url: "http://www.geekwire.com/2015/data-visualization-giant-tableau-opens-new-office-in-china/"
+                      title: "Data visualization giant Tableau opens new office in China"
+                      summary: "Tableau Software is growing fast, and now the Seattle-based maker of data visualization software is planting its flag in the most populous country in the w"
+                      thumbnail: "http://cdn.geekwire.com/wp-content/uploads/2015/08/Screen-Shot-2015-08-19-at-8.28.19-AM.png"

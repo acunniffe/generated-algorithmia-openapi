@@ -1,0 +1,29 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Summarize URL"
+    description: "This is a algorithm for summarizing content in webpages"
+    version: "0.1.4"
+    license: 
+      name: "apl"
+  paths: 
+    /nlp/SummarizeURL/0.1.4: 
+      post: 
+        summary: "Run SummarizeURL"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"http://techcrunch.com/2015/03/12/algorithmia-launches-with-more-than-800-algorithms-on-its-marketplace/\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: "\"Algorithmia, the startup that raised $2.4 million last August to connect academics building powerful algorithms and the app developers who could put them to use, just brought its marketplace out of private beta. Algorithm developers can host their work on the site and charge a fee per-use to developers who integrate the algorithm into their own work. The platform encourages further additions to its library through a bounty system, which lets users request algorithms that researchers familiar with the field can contribute from their work or develop from scratch for a fee.\""

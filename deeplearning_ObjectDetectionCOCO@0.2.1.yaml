@@ -1,0 +1,75 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "ObjectDetection - COCO"
+    description: "Detecting Objects in complex scenes"
+    version: "0.2.1"
+    license: 
+      name: "apl"
+  paths: 
+    /deeplearning/ObjectDetectionCOCO/0.2.1: 
+      post: 
+        summary: "Run ObjectDetectionCOCO"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  image: 
+                    type: "string"
+                  output: 
+                    type: "string"
+                  min_score: 
+                    type: "number"
+                  model: 
+                    type: "string"
+              example: 
+                image: "http://i.imgur.com/GtvDM8X.jpg"
+                output: "data://.algo/deeplearning/ObjectDetectionCOCO/temp/suit_and_tie.png"
+                min_score: 0.7
+                model: "ssd_mobilenet_v1"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    boxes: 
+                      type: "array"
+                      items: 
+                        type: "object"
+                        properties: 
+                          confidence: 
+                            type: "number"
+                          coordinates: 
+                            type: "object"
+                            properties: 
+                              x0: 
+                                type: "number"
+                              x1: 
+                                type: "number"
+                              y0: 
+                                type: "number"
+                              y1: 
+                                type: "number"
+                          label: 
+                            type: "string"
+                    image: 
+                      type: "string"
+                example: 
+                  boxes: 
+                    - 
+                      confidence: 0.9302127361297609
+                      coordinates: 
+                        x0: 458
+                        x1: 895
+                        y0: 74
+                        y1: 712
+                      label: "person"
+                  image: "data://.algo/deeplearning/ObjectDetectionCOCO/temp/suit_and_tie.png"

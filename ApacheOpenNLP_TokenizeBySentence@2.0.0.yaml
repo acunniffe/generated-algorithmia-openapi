@@ -1,0 +1,29 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Tokenize By Sentence"
+    description: "Splits text into sentences, and further tokenizes each sentence"
+    version: "2.0.0"
+    license: 
+      name: "apl"
+  paths: 
+    /ApacheOpenNLP/TokenizeBySentence/2.0.0: 
+      post: 
+        summary: "Run TokenizeBySentence"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"This is a sentence. This is another sentence.\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: ""

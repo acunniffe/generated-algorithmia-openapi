@@ -1,0 +1,48 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "deephorizon"
+    description: "Single image horizon line estimation."
+    version: "0.1.0"
+    license: 
+      name: "apl"
+  paths: 
+    /ukyvision/deephorizon/0.1.0: 
+      post: 
+        summary: "Run deephorizon"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  image: 
+                    type: "string"
+              example: 
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/HFX_Airport_4.jpg/1280px-HFX_Airport_4.jpg"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    left: 
+                      type: "array"
+                      items: 
+                        type: "number"
+                    right: 
+                      type: "array"
+                      items: 
+                        type: "number"
+                example: 
+                  left: 
+                    - -640
+                    - 294.98985200147615
+                  right: 
+                    - 640
+                    - 292.69899981705186

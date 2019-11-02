@@ -1,0 +1,48 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "RemoveStopwords"
+    description: " Remove stopwords from a list"
+    version: "0.1.0"
+    license: 
+      name: "apl"
+  paths: 
+    /nlp/RemoveStopwords/0.1.0: 
+      post: 
+        summary: "Run RemoveStopwords"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  type: "string"
+              example: 
+                - "The"
+                - "quick"
+                - "brown"
+                - "fox"
+                - "jumps"
+                - "over"
+                - "the"
+                - "lazy"
+                - "dog"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "string"
+                example: 
+                  - "quick"
+                  - "brown"
+                  - "fox"
+                  - "jumps"
+                  - "lazy"
+                  - "dog"

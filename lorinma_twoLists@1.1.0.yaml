@@ -1,0 +1,65 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "twoLists"
+    description: "Python 3 program to heck if two lists have common elements #structure of input {\"l1\":[],\"l2\":[]}"
+    version: "1.1.0"
+    license: 
+      name: "apl"
+  paths: 
+    /lorinma/twoLists/1.1.0: 
+      post: 
+        summary: "Run twoLists"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  l1: 
+                    type: "array"
+                    items: 
+                      oneOf: 
+                        - 
+                          type: "string"
+                        - 
+                          type: "string"
+                        - 
+                          type: "string"
+                        - 
+                          type: "number"
+                  l2: 
+                    type: "array"
+                    items: 
+                      oneOf: 
+                        - 
+                          type: "string"
+                        - 
+                          type: "string"
+                        - 
+                          type: "string"
+                        - 
+                          type: "number"
+                        - 
+                          type: "number"
+              example: 
+                l1: 
+                  - "2"
+                  - ""
+                  - 4
+                l2: 
+                  - "12"
+                  - ""
+                  - 3
+                  - 4
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "boolean"
+                example: true

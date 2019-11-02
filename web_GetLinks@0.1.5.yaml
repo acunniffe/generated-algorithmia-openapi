@@ -1,0 +1,81 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Get Links"
+    description: "Extract links from a URL"
+    version: "0.1.5"
+    license: 
+      name: "apl"
+  paths: 
+    /web/GetLinks/0.1.5: 
+      post: 
+        summary: "Run GetLinks"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"https://algorithmia.com\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "array"
+                  items: 
+                    type: "string"
+                example: 
+                  - "http://developers.algorithmia.com"
+                  - "https://algorithmia.com/terms"
+                  - "https://algorithmia.com/algorithms/TimeSeries/OutlierDetection"
+                  - "https://algorithmia.com/algorithms/opencv/FaceDetection"
+                  - "https://algorithmia.com/algorithms/SummarAI/Summarizer"
+                  - "https://algorithmia.com/signin"
+                  - "http://blog.algorithmia.com/post/125414970639/mining-product-hunt-part-ii-building-a"
+                  - "http://www.infoworld.com/article/2896527/application-development/algorithmia-aims-to-be-the-open-source-app-store-for-algorithms-and-apis.html"
+                  - "http://blog.algorithmia.com/"
+                  - "https://algorithmia.com#"
+                  - "https://algorithmia.com/algorithms/nlp/SentimentAnalysis"
+                  - "https://algorithmia.com/algorithms"
+                  - "https://algorithmia.com/algorithms/thatguy2048/PageRank"
+                  - "http://blog.algorithmia.com/post/116365814879/how-machines-see-the-web-exploring-the-web"
+                  - "https://algorithmia.com/algorithms/ANaimi/ProductHuntRecommender"
+                  - "https://algorithmia.com/algorithms/tags/AutoTagURL"
+                  - "http://blog.algorithmia.com"
+                  - "http://blog.algorithmia.com/post/119318050069/tracking-economic-development-with-open-data-and"
+                  - "http://www.wired.com/2014/08/algorithmia/"
+                  - "https://algorithmia.com/"
+                  - "https://algorithmia.com/contact"
+                  - "http://www.technologyreview.com/news/530406/a-dating-site-for-algorithms/"
+                  - "https://algorithmia.com/algorithms/opencv/SkinColorDetection"
+                  - "https://algorithmia.com/algorithms/nlp/KeywordSetSimilarity"
+                  - "http://www.bostonglobe.com/ideas/2015/03/21/like-airbnb-but-for-algorithms/HRx2sUg9fWQMvWZOsQ7xqL/story.html"
+                  - "https://algorithmia.com/algorithms/nlp/KeywordsForDocumentSet"
+                  - "https://algorithmia.com/bounties"
+                  - "https://algorithmia.com/about"
+                  - "http://techcrunch.com/2015/03/12/algorithmia-launches-with-more-than-800-algorithms-on-its-marketplace/"
+                  - "https://algorithmia.com/algodev"
+                  - "https://algorithmia.com/privacy"
+                  - "https://algorithmia.com/partners"
+                  - "https://algorithmia.com/algorithms/paranoia/FpGrowth"
+                  - "https://algorithmia.com/algorithms/opencv/NoseDetection"
+                  - "https://algorithmia.com/use-cases"
+                  - "https://algorithmia.com/algorithms/TimeSeries/LinearDetrend"
+                  - "https://algorithmia.com/algorithms/web/BreadthFirstSiteMap"
+                  - "http://blog.algorithmia.com/post/93293999119/create-your-own-machine-learning-powered-rss"
+                  - "https://algorithmia.com/recommends"
+                  - "https://algorithmia.com/getting-started"
+                  - "https://algorithmia.com/signup?invite=OpenMarketplace"
+                  - "https://algorithmia.com/algorithms/TimeSeries/RemoveSeasonality"
+                  - "https://algorithmia.com/algorithms/web/AnalyzeURL"
+                  - "https://algorithmia.com/reset"
+                  - "https://algorithmia.com/pricing"
+                  - "https://angel.co/algorithmia/jobs/"
+                  - "https://algorithmia.com/signup"
+                  - "http://blog.algorithmia.com/post/121967357859/isitnude"
+                  - "http://www.xconomy.com/seattle/2015/03/12/theres-an-algorithm-for-that-algorithmia-helps-you-find-it/"
+                  - "https://algorithmia.com/algorithms/util/Url2Text"

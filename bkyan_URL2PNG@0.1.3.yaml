@@ -1,0 +1,45 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "URL-2-PNG"
+    description: "Capture a webpage to a PNG image."
+    version: "0.1.3"
+    license: 
+      name: "apl"
+  paths: 
+    /bkyan/URL2PNG/0.1.3: 
+      post: 
+        summary: "Run URL2PNG"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "array"
+                items: 
+                  oneOf: 
+                    - 
+                      type: "string"
+                    - 
+                      type: "string"
+                    - 
+                      type: "string"
+                    - 
+                      type: "number"
+                    - 
+                      type: "number"
+              example: 
+                - "http://www.github.com"
+                - "data://.algo/temp/github.png"
+                - 1300
+                - 900
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: "\"ok\""

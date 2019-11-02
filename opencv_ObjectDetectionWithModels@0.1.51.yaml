@@ -1,0 +1,38 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Object Detection With Models"
+    version: "0.1.51"
+    license: 
+      name: "apl"
+  paths: 
+    /opencv/ObjectDetectionWithModels/0.1.51: 
+      post: 
+        summary: "Run ObjectDetectionWithModels"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  imageUrl: 
+                    type: "string"
+                  modelUrl: 
+                    type: "string"
+                  outputUrl: 
+                    type: "string"
+              example: 
+                imageUrl: "data://opencv/SampleImages/Justin_Trudeau_and_Enrique_Pena_Nieto-2-crop.jpg"
+                modelUrl: "data://opencv/SampleModels/lbpcascade_frontalface.xml"
+                outputUrl: "data://.algo/temp/output.jpg"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              schema: 
+                text/plain: 
+                  type: "string"
+              example: "\"data://.algo/temp/output.jpg\""

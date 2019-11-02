@@ -1,0 +1,39 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Genderize"
+    description: "Guess gender by name"
+    version: "0.1.3"
+    license: 
+      name: "apl"
+  paths: 
+    /barend/Genderize/0.1.3: 
+      post: 
+        summary: "Run Genderize"
+        requestBody: 
+          content: 
+            schema: 
+              text/plain: 
+                type: "string"
+            example: "\"Jane\""
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    gender: 
+                      type: "string"
+                    name: 
+                      type: "string"
+                    probability: 
+                      type: "number"
+                example: 
+                  gender: "female"
+                  name: "Jane"
+                  probability: 0.99

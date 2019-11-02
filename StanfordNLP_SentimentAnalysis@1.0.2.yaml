@@ -1,0 +1,36 @@
+---
+  openapi: "3.0.0"
+  servers: 
+    - 
+      url: "https://algorithmia.com/v1/algo/"
+  info: 
+    title: "Sentiment Analysis"
+    version: "1.0.2"
+    license: 
+      name: "apl"
+  paths: 
+    /StanfordNLP/SentimentAnalysis/1.0.2: 
+      post: 
+        summary: "Run SentimentAnalysis"
+        requestBody: 
+          content: 
+            application/json: 
+              schema: 
+                type: "object"
+                properties: 
+                  document: 
+                    type: "string"
+              example: 
+                document: "Algorithmia loves you!"
+        responses: 
+          200: 
+            description: "Algorithm Success"
+            content: 
+              application/json: 
+                schema: 
+                  type: "object"
+                  properties: 
+                    sentiment: 
+                      type: "number"
+                example: 
+                  sentiment: 3
