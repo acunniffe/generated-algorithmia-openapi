@@ -1,33 +1,33 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "SentenceDetection"
-    version: "0.1.0"
-    license: 
-      name: "apl"
-  paths: 
-    /ApacheOpenNLP/SentenceDetection/0.1.0: 
-      post: 
-        summary: "Run SentenceDetection"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"This is a sentence. This is a second sentence. And a third for good measure.\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "string"
-                example: 
-                  - "This is a sentence."
-                  - "This is a second sentence."
-                  - "And a third for good measure."
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: SentenceDetection
+    description: null
+    version: 0.1.0
+    license:
+        name: apl
+paths:
+    /ApacheOpenNLP/SentenceDetection/0.1.0:
+        post:
+            summary: 'Run SentenceDetection'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"This is a sentence. This is a second sentence. And a third for good measure."'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: string
+                            example:
+                                - 'This is a sentence.'
+                                - 'This is a second sentence.'
+                                - 'And a third for good measure.'

@@ -1,52 +1,51 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Social Sentiment Analysis"
-    description: "Gives the positive, negative and neutral sentiment of an English sentence."
-    version: "0.1.4"
-    license: 
-      name: "apl"
-  paths: 
-    /nlp/SocialSentimentAnalysis/0.1.4: 
-      post: 
-        summary: "Run SocialSentimentAnalysis"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "object"
-                properties: 
-                  sentence: 
-                    type: "string"
-              example: 
-                sentence: "This old product sucks! But after the update it works like a charm!"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "object"
-                    properties: 
-                      compound: 
-                        type: "number"
-                      negative: 
-                        type: "number"
-                      neutral: 
-                        type: "number"
-                      positive: 
-                        type: "number"
-                      sentence: 
-                        type: "string"
-                example: 
-                  - 
-                    compound: 0.508
-                    negative: 0.14500000000000002
-                    neutral: 0.521
-                    positive: 0.3350000000000001
-                    sentence: "This old product sucks! But after the update it works like a charm!"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Social Sentiment Analysis'
+    description: 'Gives the positive, negative and neutral sentiment of an English sentence.'
+    version: 0.1.4
+    license:
+        name: apl
+paths:
+    /nlp/SocialSentimentAnalysis/0.1.4:
+        post:
+            summary: 'Run SocialSentimentAnalysis'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                sentence:
+                                    type: string
+                        example:
+                            sentence: 'This old product sucks! But after the update it works like a charm!'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                        compound:
+                                            type: number
+                                        negative:
+                                            type: number
+                                        neutral:
+                                            type: number
+                                        positive:
+                                            type: number
+                                        sentence:
+                                            type: string
+                            example:
+                                -
+                                    compound: 0.508
+                                    negative: 0.14500000000000002
+                                    neutral: 0.521
+                                    positive: 0.3350000000000001
+                                    sentence: 'This old product sucks! But after the update it works like a charm!'

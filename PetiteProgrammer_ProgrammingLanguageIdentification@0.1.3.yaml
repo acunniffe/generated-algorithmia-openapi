@@ -1,94 +1,93 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Programming Language Identification"
-    description: "Detect the programming language of source code"
-    version: "0.1.3"
-    license: 
-      name: "apl"
-  paths: 
-    /PetiteProgrammer/ProgrammingLanguageIdentification/0.1.3: 
-      post: 
-        summary: "Run ProgrammingLanguageIdentification"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"/* Simple JavaScript example */\\n\\n// add two numbers\\nfunction add(n, m) {\\n  return n + m;\\n}\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "array"
-                example: 
-                  - 
-                    - "javascript"
-                    - 0.9898891716577287
-                  - 
-                    - "markdown"
-                    - 0.003837364611352916
-                  - 
-                    - "java"
-                    - 0.0018736157456299308
-                  - 
-                    - "php"
-                    - 0.0017531876463711639
-                  - 
-                    - "c"
-                    - 0.0009585207454160043
-                  - 
-                    - "lua"
-                    - 0.0007419186073970404
-                  - 
-                    - "html"
-                    - 0.0003518026874305513
-                  - 
-                    - "objective-c"
-                    - 0.0002779842516112652
-                  - 
-                    - "sql"
-                    - 0.00017283418084344316
-                  - 
-                    - "css"
-                    - 0.000038611774005519745
-                  - 
-                    - "c++"
-                    - 0.0000343903914437696
-                  - 
-                    - "swift"
-                    - 0.00003122888156291078
-                  - 
-                    - "bash"
-                    - 0.000013677125153852474
-                  - 
-                    - "ruby"
-                    - 0.00001224731478181401
-                  - 
-                    - "perl"
-                    - 0.000005581660035943508
-                  - 
-                    - "c#"
-                    - 0.0000038442524620865925
-                  - 
-                    - "scala"
-                    - 0.000003723956933340254
-                  - 
-                    - "python"
-                    - 1.572113560595084e-7
-                  - 
-                    - "r"
-                    - 6.431838326426007e-8
-                  - 
-                    - "haskell"
-                    - 4.036764786336715e-8
-                  - 
-                    - "vb"
-                    - 3.261245241114874e-8
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Programming Language Identification'
+    description: 'Detect the programming language of source code'
+    version: 0.1.3
+    license:
+        name: apl
+paths:
+    /PetiteProgrammer/ProgrammingLanguageIdentification/0.1.3:
+        post:
+            summary: 'Run ProgrammingLanguageIdentification'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"/* Simple JavaScript example */\n\n// add two numbers\nfunction add(n, m) {\n  return n + m;\n}"'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: array
+                            example:
+                                -
+                                    - javascript
+                                    - 0.9898891716577287
+                                -
+                                    - markdown
+                                    - 0.003837364611352916
+                                -
+                                    - java
+                                    - 0.0018736157456299308
+                                -
+                                    - php
+                                    - 0.0017531876463711639
+                                -
+                                    - c
+                                    - 0.0009585207454160043
+                                -
+                                    - lua
+                                    - 0.0007419186073970404
+                                -
+                                    - html
+                                    - 0.0003518026874305513
+                                -
+                                    - objective-c
+                                    - 0.0002779842516112652
+                                -
+                                    - sql
+                                    - 0.00017283418084344316
+                                -
+                                    - css
+                                    - 0.000038611774005519745
+                                -
+                                    - c++
+                                    - 0.0000343903914437696
+                                -
+                                    - swift
+                                    - 0.00003122888156291078
+                                -
+                                    - bash
+                                    - 0.000013677125153852474
+                                -
+                                    - ruby
+                                    - 0.00001224731478181401
+                                -
+                                    - perl
+                                    - 0.000005581660035943508
+                                -
+                                    - 'c#'
+                                    - 0.0000038442524620865925
+                                -
+                                    - scala
+                                    - 0.000003723956933340254
+                                -
+                                    - python
+                                    - 1.572113560595084e-7
+                                -
+                                    - r
+                                    - 6.431838326426007e-8
+                                -
+                                    - haskell
+                                    - 4.036764786336715e-8
+                                -
+                                    - vb
+                                    - 3.261245241114874e-8

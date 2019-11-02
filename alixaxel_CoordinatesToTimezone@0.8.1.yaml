@@ -1,46 +1,45 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "CoordinatesToTimezone"
-    description: "Timezone information for a latitude-longitude location"
-    version: "0.8.1"
-    license: 
-      name: "apl"
-  paths: 
-    /alixaxel/CoordinatesToTimezone/0.8.1: 
-      post: 
-        summary: "Run CoordinatesToTimezone"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "array"
-                items: 
-                  type: "number"
-              example: 
-                - 47.6
-                - -122.3
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    id: 
-                      type: "string"
-                    name: 
-                      type: "string"
-                    offset: 
-                      type: "number"
-                    offset_dst: 
-                      type: "number"
-                example: 
-                  id: "America/Los_Angeles"
-                  name: "Pacific Daylight Time"
-                  offset: -28800
-                  offset_dst: 3600
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: CoordinatesToTimezone
+    description: 'Timezone information for a latitude-longitude location'
+    version: 0.8.1
+    license:
+        name: apl
+paths:
+    /alixaxel/CoordinatesToTimezone/0.8.1:
+        post:
+            summary: 'Run CoordinatesToTimezone'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: array
+                            items:
+                                type: number
+                        example:
+                            - 47.6
+                            - -122.3
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    name:
+                                        type: string
+                                    offset:
+                                        type: number
+                                    offset_dst:
+                                        type: number
+                            example:
+                                id: America/Los_Angeles
+                                name: 'Pacific Daylight Time'
+                                offset: -28800
+                                offset_dst: 3600

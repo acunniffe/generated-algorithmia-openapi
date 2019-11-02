@@ -1,29 +1,28 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "YahooOpenNSFW"
-    description: "It isn't just nudity that isn't safe for work."
-    version: "0.1.1"
-    license: 
-      name: "apl"
-  paths: 
-    /spullara/YahooOpenNSFW/0.1.1: 
-      post: 
-        summary: "Run YahooOpenNSFW"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"data://spullara/sampledata/bikini.jpg\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "number"
-                example: 0.6528301239013672
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: YahooOpenNSFW
+    description: 'It isn''t just nudity that isn''t safe for work.'
+    version: 0.1.1
+    license:
+        name: apl
+paths:
+    /spullara/YahooOpenNSFW/0.1.1:
+        post:
+            summary: 'Run YahooOpenNSFW'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"data://spullara/sampledata/bikini.jpg"'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: number
+                            example: 0.6528301239013672

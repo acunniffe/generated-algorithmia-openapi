@@ -1,60 +1,59 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "POS Tagger"
-    description: "Marks tokens (words) with their corresponding word type"
-    version: "0.1.1"
-    license: 
-      name: "apl"
-  paths: 
-    /ApacheOpenNLP/POSTagger/0.1.1: 
-      post: 
-        summary: "Run POSTagger"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"John was awakened by a loud noise. At first he thought it was a burglar, but then realized it was just his pet hamster.\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "array"
-                example: 
-                  - 
-                    - "NNP"
-                    - "VBD"
-                    - "VBN"
-                    - "IN"
-                    - "DT"
-                    - "JJ"
-                    - "NN"
-                    - "."
-                  - 
-                    - "IN"
-                    - "JJ"
-                    - "PRP"
-                    - "VBD"
-                    - "PRP"
-                    - "VBD"
-                    - "DT"
-                    - "NN"
-                    - ","
-                    - "CC"
-                    - "RB"
-                    - "VBD"
-                    - "PRP"
-                    - "VBD"
-                    - "RB"
-                    - "PRP$"
-                    - "NN"
-                    - "NN"
-                    - "."
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'POS Tagger'
+    description: 'Marks tokens (words) with their corresponding word type'
+    version: 0.1.1
+    license:
+        name: apl
+paths:
+    /ApacheOpenNLP/POSTagger/0.1.1:
+        post:
+            summary: 'Run POSTagger'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"John was awakened by a loud noise. At first he thought it was a burglar, but then realized it was just his pet hamster."'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: array
+                            example:
+                                -
+                                    - NNP
+                                    - VBD
+                                    - VBN
+                                    - IN
+                                    - DT
+                                    - JJ
+                                    - NN
+                                    - .
+                                -
+                                    - IN
+                                    - JJ
+                                    - PRP
+                                    - VBD
+                                    - PRP
+                                    - VBD
+                                    - DT
+                                    - NN
+                                    - ','
+                                    - CC
+                                    - RB
+                                    - VBD
+                                    - PRP
+                                    - VBD
+                                    - RB
+                                    - PRP$
+                                    - NN
+                                    - NN
+                                    - .

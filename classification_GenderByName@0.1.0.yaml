@@ -1,47 +1,46 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Gender By Name (First, Last or Full Name) Classifier"
-    description: "Fast gender classifier by name. Classification works with first and last name (order-independent); last name optional."
-    version: "0.1.0"
-    license: 
-      name: "apl"
-  paths: 
-    /classification/GenderByName/0.1.0: 
-      post: 
-        summary: "Run GenderByName"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "object"
-                properties: 
-                  name: 
-                    type: "string"
-              example: 
-                name: "John Smith"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    gender: 
-                      type: "object"
-                      properties: 
-                        female: 
-                          type: "number"
-                        male: 
-                          type: "number"
-                    name: 
-                      type: "string"
-                example: 
-                  gender: 
-                    female: 0.0415
-                    male: 0.9585
-                  name: "John Smith"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Gender By Name (First, Last or Full Name) Classifier'
+    description: 'Fast gender classifier by name. Classification works with first and last name (order-independent); last name optional.'
+    version: 0.1.0
+    license:
+        name: apl
+paths:
+    /classification/GenderByName/0.1.0:
+        post:
+            summary: 'Run GenderByName'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                        example:
+                            name: 'John Smith'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    gender:
+                                        type: object
+                                        properties:
+                                            female:
+                                                type: number
+                                            male:
+                                                type: number
+                                    name:
+                                        type: string
+                            example:
+                                gender:
+                                    female: 0.0415
+                                    male: 0.9585
+                                name: 'John Smith'

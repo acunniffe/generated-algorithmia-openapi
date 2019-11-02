@@ -1,78 +1,77 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Car Make and Model Recognition"
-    description: "Identify make, model, body style and model year of any car."
-    version: "0.4.6"
-    license: 
-      name: "apl"
-  paths: 
-    /LgoBE/CarMakeandModelRecognition/0.4.6: 
-      post: 
-        summary: "Run CarMakeandModelRecognition"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"https://upload.wikimedia.org/wikipedia/commons/4/44/2019_Acura_RDX_A-Spec_front_red_4.2.18.jpg\"\n"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "object"
-                    properties: 
-                      body_style: 
-                        type: "string"
-                      confidence: 
-                        type: "string"
-                      make: 
-                        type: "string"
-                      model: 
-                        type: "string"
-                      model_year: 
-                        type: "string"
-                    required: 
-                      - "body_style"
-                      - "confidence"
-                      - "make"
-                      - "model"
-                      - "model_year"
-                example: 
-                  - 
-                    body_style: "SUV"
-                    confidence: "0.99"
-                    make: "Acura"
-                    model: "RDX"
-                    model_year: "2018"
-                  - 
-                    body_style: "SUV"
-                    confidence: "0.00"
-                    make: "Acura"
-                    model: "RDX"
-                    model_year: "2015"
-                  - 
-                    body_style: "SUV"
-                    confidence: "0.00"
-                    make: "Kia"
-                    model: "Seltos"
-                    model_year: "2019"
-                  - 
-                    body_style: "SUV"
-                    confidence: "0.00"
-                    make: "Toyota"
-                    model: "Highlander"
-                    model_year: "2013"
-                  - 
-                    body_style: "SUV"
-                    confidence: "0.00"
-                    make: "Nissan"
-                    model: "Pathfinder"
-                    model_year: "2012"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Car Make and Model Recognition'
+    description: 'Identify make, model, body style and model year of any car.'
+    version: 0.4.6
+    license:
+        name: apl
+paths:
+    /LgoBE/CarMakeandModelRecognition/0.4.6:
+        post:
+            summary: 'Run CarMakeandModelRecognition'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: "\"https://upload.wikimedia.org/wikipedia/commons/4/44/2019_Acura_RDX_A-Spec_front_red_4.2.18.jpg\"\n"
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                        body_style:
+                                            type: string
+                                        confidence:
+                                            type: string
+                                        make:
+                                            type: string
+                                        model:
+                                            type: string
+                                        model_year:
+                                            type: string
+                                    required:
+                                        - body_style
+                                        - confidence
+                                        - make
+                                        - model
+                                        - model_year
+                            example:
+                                -
+                                    body_style: SUV
+                                    confidence: '0.99'
+                                    make: Acura
+                                    model: RDX
+                                    model_year: '2018'
+                                -
+                                    body_style: SUV
+                                    confidence: '0.00'
+                                    make: Acura
+                                    model: RDX
+                                    model_year: '2015'
+                                -
+                                    body_style: SUV
+                                    confidence: '0.00'
+                                    make: Kia
+                                    model: Seltos
+                                    model_year: '2019'
+                                -
+                                    body_style: SUV
+                                    confidence: '0.00'
+                                    make: Toyota
+                                    model: Highlander
+                                    model_year: '2013'
+                                -
+                                    body_style: SUV
+                                    confidence: '0.00'
+                                    make: Nissan
+                                    model: Pathfinder
+                                    model_year: '2012'

@@ -1,44 +1,43 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Word2Vec"
-    description: "Get similar words by vector arithmetic"
-    version: "1.2.0"
-    license: 
-      name: "apl"
-  paths: 
-    /nlp/Word2Vec/1.2.0: 
-      post: 
-        summary: "Run Word2Vec"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "object"
-                properties: 
-                  doesntMatch: 
-                    type: "array"
-                    items: 
-                      type: "string"
-              example: 
-                doesntMatch: 
-                  - "apple"
-                  - "orange"
-                  - "soda"
-                  - "pineapple"
-                  - "strawberry"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    doesntMatchResult: 
-                      type: "string"
-                example: 
-                  doesntMatchResult: "soda"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: Word2Vec
+    description: 'Get similar words by vector arithmetic'
+    version: 1.2.0
+    license:
+        name: apl
+paths:
+    /nlp/Word2Vec/1.2.0:
+        post:
+            summary: 'Run Word2Vec'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                doesntMatch:
+                                    type: array
+                                    items:
+                                        type: string
+                        example:
+                            doesntMatch:
+                                - apple
+                                - orange
+                                - soda
+                                - pineapple
+                                - strawberry
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    doesntMatchResult:
+                                        type: string
+                            example:
+                                doesntMatchResult: soda

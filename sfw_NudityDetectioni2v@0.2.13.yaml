@@ -1,39 +1,38 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "NudityDetectioni2v"
-    description: "Detect nudity in pictures."
-    version: "0.2.13"
-    license: 
-      name: "apl"
-  paths: 
-    /sfw/NudityDetectioni2v/0.2.13: 
-      post: 
-        summary: "Run NudityDetectioni2v"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"http://www.isitnude.com.s3-website-us-east-1.amazonaws.com/assets/images/sample/young-man-by-the-sea.jpg\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    url: 
-                      type: "string"
-                    confidence: 
-                      type: "number"
-                    nude: 
-                      type: "boolean"
-                example: 
-                  url: "http://www.isitnude.com.s3-website-us-east-1.amazonaws.com/assets/images/sample/young-man-by-the-sea.jpg"
-                  confidence: 1
-                  nude: true
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: NudityDetectioni2v
+    description: 'Detect nudity in pictures.'
+    version: 0.2.13
+    license:
+        name: apl
+paths:
+    /sfw/NudityDetectioni2v/0.2.13:
+        post:
+            summary: 'Run NudityDetectioni2v'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"http://www.isitnude.com.s3-website-us-east-1.amazonaws.com/assets/images/sample/young-man-by-the-sea.jpg"'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    url:
+                                        type: string
+                                    confidence:
+                                        type: number
+                                    nude:
+                                        type: boolean
+                            example:
+                                url: 'http://www.isitnude.com.s3-website-us-east-1.amazonaws.com/assets/images/sample/young-man-by-the-sea.jpg'
+                                confidence: 1
+                                nude: true

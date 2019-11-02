@@ -1,54 +1,53 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Auto-Tag URL"
-    description: "Automatically generate keyword tags for a URL"
-    version: "0.1.9"
-    license: 
-      name: "apl"
-  paths: 
-    /tags/AutoTagURL/0.1.9: 
-      post: 
-        summary: "Run AutoTagURL"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"https://raw.githubusercontent.com/mbernste/machine-learning/master/README.md\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    algorithm: 
-                      type: "number"
-                    structure: 
-                      type: "number"
-                    bayes: 
-                      type: "number"
-                    classifier: 
-                      type: "number"
-                    naïve: 
-                      type: "number"
-                    search: 
-                      type: "number"
-                    algorithms: 
-                      type: "number"
-                    bayesian: 
-                      type: "number"
-                example: 
-                  algorithm: 4
-                  structure: 2
-                  bayes: 2
-                  classifier: 2
-                  naïve: 2
-                  search: 2
-                  algorithms: 2
-                  bayesian: 2
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Auto-Tag URL'
+    description: 'Automatically generate keyword tags for a URL'
+    version: 0.1.9
+    license:
+        name: apl
+paths:
+    /tags/AutoTagURL/0.1.9:
+        post:
+            summary: 'Run AutoTagURL'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"https://raw.githubusercontent.com/mbernste/machine-learning/master/README.md"'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    algorithm:
+                                        type: number
+                                    structure:
+                                        type: number
+                                    bayes:
+                                        type: number
+                                    classifier:
+                                        type: number
+                                    naïve:
+                                        type: number
+                                    search:
+                                        type: number
+                                    algorithms:
+                                        type: number
+                                    bayesian:
+                                        type: number
+                            example:
+                                algorithm: 4
+                                structure: 2
+                                bayes: 2
+                                classifier: 2
+                                naïve: 2
+                                search: 2
+                                algorithms: 2
+                                bayesian: 2

@@ -1,38 +1,38 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "PageRank"
-    version: "0.1.0"
-    license: 
-      name: "apl"
-  paths: 
-    /thatguy2048/PageRank/0.1.0: 
-      post: 
-        summary: "Run PageRank"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"{d:0.85,loops:20,pages:[[1,2,3],[0],[0],[0,4,5,6,7],[],[],[],[]]}\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "number"
-                example: 
-                  - 0.9142543787391981
-                  - 0.4089334112608257
-                  - 0.4089334112608257
-                  - 0.4089334112608257
-                  - 0.21947767079447258
-                  - 0.21947767079447258
-                  - 0.21947767079447258
-                  - 0.21947767079447258
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: PageRank
+    description: null
+    version: 0.1.0
+    license:
+        name: apl
+paths:
+    /thatguy2048/PageRank/0.1.0:
+        post:
+            summary: 'Run PageRank'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"{d:0.85,loops:20,pages:[[1,2,3],[0],[0],[0,4,5,6,7],[],[],[],[]]}"'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: number
+                            example:
+                                - 0.9142543787391981
+                                - 0.4089334112608257
+                                - 0.4089334112608257
+                                - 0.4089334112608257
+                                - 0.21947767079447258
+                                - 0.21947767079447258
+                                - 0.21947767079447258
+                                - 0.21947767079447258

@@ -1,58 +1,57 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Auto-Tag Github"
-    description: "Automatically generate keyword tags for a github repo"
-    version: "0.1.4"
-    license: 
-      name: "apl"
-  paths: 
-    /tags/AutoTagGithub/0.1.4: 
-      post: 
-        summary: "Run AutoTagGithub"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "array"
-                items: 
-                  type: "string"
-              example: 
-                - "rails"
-                - "rails"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    rails: 
-                      type: "number"
-                    action: 
-                      type: "number"
-                    ruby: 
-                      type: "number"
-                    active: 
-                      type: "number"
-                    view: 
-                      type: "number"
-                    generate: 
-                      type: "number"
-                    classes: 
-                      type: "number"
-                    controller: 
-                      type: "number"
-                example: 
-                  rails: 21
-                  action: 10
-                  ruby: 9
-                  active: 7
-                  view: 7
-                  generate: 5
-                  classes: 5
-                  controller: 5
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Auto-Tag Github'
+    description: 'Automatically generate keyword tags for a github repo'
+    version: 0.1.4
+    license:
+        name: apl
+paths:
+    /tags/AutoTagGithub/0.1.4:
+        post:
+            summary: 'Run AutoTagGithub'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: array
+                            items:
+                                type: string
+                        example:
+                            - rails
+                            - rails
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    rails:
+                                        type: number
+                                    action:
+                                        type: number
+                                    ruby:
+                                        type: number
+                                    active:
+                                        type: number
+                                    view:
+                                        type: number
+                                    generate:
+                                        type: number
+                                    classes:
+                                        type: number
+                                    controller:
+                                        type: number
+                            example:
+                                rails: 21
+                                action: 10
+                                ruby: 9
+                                active: 7
+                                view: 7
+                                generate: 5
+                                classes: 5
+                                controller: 5

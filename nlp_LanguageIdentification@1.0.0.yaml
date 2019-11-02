@@ -1,43 +1,42 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Language Identification"
-    description: "Guess what language based on input text"
-    version: "1.0.0"
-    license: 
-      name: "apl"
-  paths: 
-    /nlp/LanguageIdentification/1.0.0: 
-      post: 
-        summary: "Run LanguageIdentification"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "object"
-                properties: 
-                  sentence: 
-                    type: "string"
-              example: 
-                sentence: "Hello, I'm speaking English. Can you guess which language I'm talking in?"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "object"
-                    properties: 
-                      confidence: 
-                        type: "string"
-                      language: 
-                        type: "string"
-                example: 
-                  - 
-                    confidence: "0.9999959"
-                    language: "en"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Language Identification'
+    description: 'Guess what language based on input text'
+    version: 1.0.0
+    license:
+        name: apl
+paths:
+    /nlp/LanguageIdentification/1.0.0:
+        post:
+            summary: 'Run LanguageIdentification'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                sentence:
+                                    type: string
+                        example:
+                            sentence: 'Hello, I''m speaking English. Can you guess which language I''m talking in?'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                        confidence:
+                                            type: string
+                                        language:
+                                            type: string
+                            example:
+                                -
+                                    confidence: '0.9999959'
+                                    language: en

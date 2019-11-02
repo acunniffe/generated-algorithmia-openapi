@@ -1,47 +1,47 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Weka Classification"
-    version: "0.1.9"
-    license: 
-      name: "apl"
-  paths: 
-    /weka/WekaClassification/0.1.9: 
-      post: 
-        summary: "Run WekaClassification"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "object"
-                properties: 
-                  trainUrl: 
-                    type: "string"
-                  cv: 
-                    type: "number"
-                  options: 
-                    type: "string"
-                  mode: 
-                    type: "string"
-                  modelUrl: 
-                    type: "string"
-                  type: 
-                    type: "string"
-              example: 
-                trainUrl: "data://weka/WekaSampleCollection/train.arff"
-                cv: 5
-                options: ""
-                mode: "train"
-                modelUrl: "data://.algo/temp/model.txt"
-                type: "RandomForest"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              schema: 
-                text/plain: 
-                  type: "string"
-              example: "\"\\nResults\\n=======\\n\\nCorrectly Classified Instances       10956               91.3    %\\nIncorrectly Classified Instances      1044                8.7    %\\nKappa statistic                          0.9033\\nMean absolute error                      0.0577\\nRoot mean squared error                  0.1417\\nRelative absolute error                 32.09   %\\nRoot relative squared error             47.2406 %\\nTotal Number of Instances            12000     \\n\""
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Weka Classification'
+    description: null
+    version: 0.1.9
+    license:
+        name: apl
+paths:
+    /weka/WekaClassification/0.1.9:
+        post:
+            summary: 'Run WekaClassification'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                trainUrl:
+                                    type: string
+                                cv:
+                                    type: number
+                                options:
+                                    type: string
+                                mode:
+                                    type: string
+                                modelUrl:
+                                    type: string
+                                type:
+                                    type: string
+                        example:
+                            trainUrl: 'data://weka/WekaSampleCollection/train.arff'
+                            cv: 5
+                            options: ""
+                            mode: train
+                            modelUrl: 'data://.algo/temp/model.txt'
+                            type: RandomForest
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        schema:
+                            text/plain:
+                                type: string
+                        example: '"\nResults\n=======\n\nCorrectly Classified Instances       10956               91.3    %\nIncorrectly Classified Instances      1044                8.7    %\nKappa statistic                          0.9033\nMean absolute error                      0.0577\nRoot mean squared error                  0.1417\nRelative absolute error                 32.09   %\nRoot relative squared error             47.2406 %\nTotal Number of Instances            12000     \n"'

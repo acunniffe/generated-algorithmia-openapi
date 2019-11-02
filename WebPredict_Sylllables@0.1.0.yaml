@@ -1,34 +1,34 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Sylllables"
-    version: "0.1.0"
-    license: 
-      name: "apl"
-  paths: 
-    /WebPredict/Sylllables/0.1.0: 
-      post: 
-        summary: "Run Sylllables"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"monumental\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "string"
-                example: 
-                  - "mo"
-                  - "nu"
-                  - "men"
-                  - "tal"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: Sylllables
+    description: null
+    version: 0.1.0
+    license:
+        name: apl
+paths:
+    /WebPredict/Sylllables/0.1.0:
+        post:
+            summary: 'Run Sylllables'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"monumental"'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: string
+                            example:
+                                - mo
+                                - nu
+                                - men
+                                - tal

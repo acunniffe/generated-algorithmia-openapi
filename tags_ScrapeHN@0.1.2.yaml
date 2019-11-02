@@ -1,163 +1,162 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Scrape HN"
-    description: "Scrapes the HackerNews RSS feed and returns the data as JSON"
-    version: "0.1.2"
-    license: 
-      name: "apl"
-  paths: 
-    /tags/ScrapeHN/0.1.2: 
-      post: 
-        summary: "Run ScrapeHN"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "array"
-                items: {}
-              example: []
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "object"
-                    properties: 
-                      title: 
-                        type: "string"
-                      url: 
-                        type: "string"
-                      comments: 
-                        type: "string"
-                    required: 
-                      - "title"
-                      - "url"
-                      - "comments"
-                example: 
-                  - 
-                    title: "CSS One-Liners to Replace Native Apps"
-                    url: "http://alistapart.com/blog/post/ten-css-one-liners-to-replace-native-apps/"
-                    comments: "https://news.ycombinator.com/item?id=8078173"
-                  - 
-                    title: "SpaceX Layoffs"
-                    url: "http://forum.nasaspaceflight.com/index.php?topic=35254.0"
-                    comments: "https://news.ycombinator.com/item?id=8078194"
-                  - 
-                    title: "Near Miss: The Solar Superstorm of July 2012"
-                    url: "http://science.nasa.gov/science-news/science-at-nasa/2014/23jul_superstorm/"
-                    comments: "https://news.ycombinator.com/item?id=8077727"
-                  - 
-                    title: "Firm Inefficiency"
-                    url: "http://www.overcomingbias.com/2014/07/firm-inefficiency.html"
-                    comments: "https://news.ycombinator.com/item?id=8075674"
-                  - 
-                    title: "Tracking down a kernel bug with git bisect"
-                    url: "http://blog.oddbit.com/2014/07/21/tracking-down-a-kernel-bug-wit/"
-                    comments: "https://news.ycombinator.com/item?id=8074655"
-                  - 
-                    title: "Access Control in Swift"
-                    url: "https://developer.apple.com/swift/blog/?id=5"
-                    comments: "https://news.ycombinator.com/item?id=8077690"
-                  - 
-                    title: "Microsoft on GitHub"
-                    url: "https://github.com/Microsoft/"
-                    comments: "https://news.ycombinator.com/item?id=8078355"
-                  - 
-                    title: "Ask HN: How to split equity?"
-                    url: "https://news.ycombinator.com/item?id=8078356"
-                    comments: "https://news.ycombinator.com/item?id=8078356"
-                  - 
-                    title: "Rebuilding a broken Gameboy with a Raspberry Pi"
-                    url: "https://superpiboy.wordpress.com"
-                    comments: "https://news.ycombinator.com/item?id=8075842"
-                  - 
-                    title: "Lisp in QBASIC"
-                    url: "https://www.ma.utexas.edu/users/dmenezes/lisp.html"
-                    comments: "https://news.ycombinator.com/item?id=8076970"
-                  - 
-                    title: "Hudson's Lost Mario Trilogy (2010)"
-                    url: "http://www.hardcoregaming101.net/hudsonmario/hudsonmario.htm"
-                    comments: "https://news.ycombinator.com/item?id=8077969"
-                  - 
-                    title: "Programming with Punched Cards (2005) [pdf]"
-                    url: "http://www.columbia.edu/cu/computinghistory/fisk.pdf"
-                    comments: "https://news.ycombinator.com/item?id=8077739"
-                  - 
-                    title: "My best app was a financial failure"
-                    url: "http://appstore100k.com/blog/my-best-app-was-a-financial-failure/"
-                    comments: "https://news.ycombinator.com/item?id=8078553"
-                  - 
-                    title: "Show HN: Basic Open Source Ticketing System Using Gmail API"
-                    url: "https://github.com/nutanc/gmail_tickets"
-                    comments: "https://news.ycombinator.com/item?id=8078547"
-                  - 
-                    title: "Plasma physics: The fusion upstarts"
-                    url: "http://www.nature.com/news/plasma-physics-the-fusion-upstarts-1.15592"
-                    comments: "https://news.ycombinator.com/item?id=8075926"
-                  - 
-                    title: "Sierra Leone's chief Ebola doctor contracts the virus"
-                    url: "http://www.reuters.com/article/2014/07/23/ozatp-uk-health-ebola-africa-idAFKBN0FS10V20140723"
-                    comments: "https://news.ycombinator.com/item?id=8077038"
-                  - 
-                    title: "'Optical fibre' made out of thin air"
-                    url: "http://www.cbc.ca/news/technology/optical-fibre-made-out-of-thin-air-1.2715321"
-                    comments: "https://news.ycombinator.com/item?id=8076919"
-                  - 
-                    title: "The sad state of Linux Wi-Fi"
-                    url: "http://blog.sesse.net/blog/tech/2014-07-23-12-28_the_sad_state_of_linux_wi-fi.html"
-                    comments: "https://news.ycombinator.com/item?id=8075880"
-                  - 
-                    title: "Show HN: Balances ? Mint for Bitcoin and other cryptocurrencies"
-                    url: "https://balances.io"
-                    comments: "https://news.ycombinator.com/item?id=8075959"
-                  - 
-                    title: "Paletton ? Color Scheme Designer"
-                    url: "http://www.paletton.com"
-                    comments: "https://news.ycombinator.com/item?id=8074694"
-                  - 
-                    title: "Open Name System: Extending DNS with the Blockchain"
-                    url: "http://opennamesystem.org"
-                    comments: "https://news.ycombinator.com/item?id=8074517"
-                  - 
-                    title: "The Most Terrifying Thought Experiment of All Time"
-                    url: "http://www.slate.com/articles/technology/bitwise/2014/07/roko_s_basilisk_the_most_terrifying_thought_experiment_of_all_time.single.html"
-                    comments: "https://news.ycombinator.com/item?id=8078494"
-                  - 
-                    title: "SpaceX Soft Lands Falcon 9 Rocket First Stage"
-                    url: "http://www.spacex.com/news/2014/07/22/spacex-soft-lands-falcon-9-rocket-first-stage"
-                    comments: "https://news.ycombinator.com/item?id=8071070"
-                  - 
-                    title: "Netflix's Open Connect Appliances"
-                    url: "http://gizmodo.com/this-box-can-hold-an-entire-netflix-1592590450"
-                    comments: "https://news.ycombinator.com/item?id=8074834"
-                  - 
-                    title: "How recursion got into programming: a comedy of errors"
-                    url: "http://vanemden.wordpress.com/2014/06/18/how-recursion-got-into-programming-a-comedy-of-errors-3/"
-                    comments: "https://news.ycombinator.com/item?id=8073361"
-                  - 
-                    title: "Microsoft lays off thousands with bad memo"
-                    url: "http://nymag.com/daily/intelligencer/2014/07/microsoft-lays-off-thousands-with-bad-memo.html"
-                    comments: "https://news.ycombinator.com/item?id=8078460"
-                  - 
-                    title: "The Secret Government Rulebook For Labeling Someone a Terrorist"
-                    url: "https://firstlook.org/theintercept/article/2014/07/23/blacklisted/"
-                    comments: "https://news.ycombinator.com/item?id=8076221"
-                  - 
-                    title: "William Shatner reviews Facebook Mentions"
-                    url: "http://williamshatner.tumblr.com/post/92551992485/facebook-mentions-versus-facebook-pages-apps"
-                    comments: "https://news.ycombinator.com/item?id=8072387"
-                  - 
-                    title: "Apple Confirms ?Back Doors?, Downplays Their Severity"
-                    url: "http://www.zdziarski.com/blog/?p=3466"
-                    comments: "https://news.ycombinator.com/item?id=8074654"
-                  - 
-                    title: "Polygon sat down with one of the creators of Dwarf Fortress"
-                    url: "http://www.polygon.com/2014/7/23/5926447/dwarf-fortress-will-crush-your-cpu-because-creating-history-is-hard"
-                    comments: "https://news.ycombinator.com/item?id=8075534"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Scrape HN'
+    description: 'Scrapes the HackerNews RSS feed and returns the data as JSON'
+    version: 0.1.2
+    license:
+        name: apl
+paths:
+    /tags/ScrapeHN/0.1.2:
+        post:
+            summary: 'Run ScrapeHN'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: array
+                            items: {}
+                        example: []
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                        title:
+                                            type: string
+                                        url:
+                                            type: string
+                                        comments:
+                                            type: string
+                                    required:
+                                        - title
+                                        - url
+                                        - comments
+                            example:
+                                -
+                                    title: 'CSS One-Liners to Replace Native Apps'
+                                    url: 'http://alistapart.com/blog/post/ten-css-one-liners-to-replace-native-apps/'
+                                    comments: 'https://news.ycombinator.com/item?id=8078173'
+                                -
+                                    title: 'SpaceX Layoffs'
+                                    url: 'http://forum.nasaspaceflight.com/index.php?topic=35254.0'
+                                    comments: 'https://news.ycombinator.com/item?id=8078194'
+                                -
+                                    title: 'Near Miss: The Solar Superstorm of July 2012'
+                                    url: 'http://science.nasa.gov/science-news/science-at-nasa/2014/23jul_superstorm/'
+                                    comments: 'https://news.ycombinator.com/item?id=8077727'
+                                -
+                                    title: 'Firm Inefficiency'
+                                    url: 'http://www.overcomingbias.com/2014/07/firm-inefficiency.html'
+                                    comments: 'https://news.ycombinator.com/item?id=8075674'
+                                -
+                                    title: 'Tracking down a kernel bug with git bisect'
+                                    url: 'http://blog.oddbit.com/2014/07/21/tracking-down-a-kernel-bug-wit/'
+                                    comments: 'https://news.ycombinator.com/item?id=8074655'
+                                -
+                                    title: 'Access Control in Swift'
+                                    url: 'https://developer.apple.com/swift/blog/?id=5'
+                                    comments: 'https://news.ycombinator.com/item?id=8077690'
+                                -
+                                    title: 'Microsoft on GitHub'
+                                    url: 'https://github.com/Microsoft/'
+                                    comments: 'https://news.ycombinator.com/item?id=8078355'
+                                -
+                                    title: 'Ask HN: How to split equity?'
+                                    url: 'https://news.ycombinator.com/item?id=8078356'
+                                    comments: 'https://news.ycombinator.com/item?id=8078356'
+                                -
+                                    title: 'Rebuilding a broken Gameboy with a Raspberry Pi'
+                                    url: 'https://superpiboy.wordpress.com'
+                                    comments: 'https://news.ycombinator.com/item?id=8075842'
+                                -
+                                    title: 'Lisp in QBASIC'
+                                    url: 'https://www.ma.utexas.edu/users/dmenezes/lisp.html'
+                                    comments: 'https://news.ycombinator.com/item?id=8076970'
+                                -
+                                    title: 'Hudson''s Lost Mario Trilogy (2010)'
+                                    url: 'http://www.hardcoregaming101.net/hudsonmario/hudsonmario.htm'
+                                    comments: 'https://news.ycombinator.com/item?id=8077969'
+                                -
+                                    title: 'Programming with Punched Cards (2005) [pdf]'
+                                    url: 'http://www.columbia.edu/cu/computinghistory/fisk.pdf'
+                                    comments: 'https://news.ycombinator.com/item?id=8077739'
+                                -
+                                    title: 'My best app was a financial failure'
+                                    url: 'http://appstore100k.com/blog/my-best-app-was-a-financial-failure/'
+                                    comments: 'https://news.ycombinator.com/item?id=8078553'
+                                -
+                                    title: 'Show HN: Basic Open Source Ticketing System Using Gmail API'
+                                    url: 'https://github.com/nutanc/gmail_tickets'
+                                    comments: 'https://news.ycombinator.com/item?id=8078547'
+                                -
+                                    title: 'Plasma physics: The fusion upstarts'
+                                    url: 'http://www.nature.com/news/plasma-physics-the-fusion-upstarts-1.15592'
+                                    comments: 'https://news.ycombinator.com/item?id=8075926'
+                                -
+                                    title: 'Sierra Leone''s chief Ebola doctor contracts the virus'
+                                    url: 'http://www.reuters.com/article/2014/07/23/ozatp-uk-health-ebola-africa-idAFKBN0FS10V20140723'
+                                    comments: 'https://news.ycombinator.com/item?id=8077038'
+                                -
+                                    title: '''Optical fibre'' made out of thin air'
+                                    url: 'http://www.cbc.ca/news/technology/optical-fibre-made-out-of-thin-air-1.2715321'
+                                    comments: 'https://news.ycombinator.com/item?id=8076919'
+                                -
+                                    title: 'The sad state of Linux Wi-Fi'
+                                    url: 'http://blog.sesse.net/blog/tech/2014-07-23-12-28_the_sad_state_of_linux_wi-fi.html'
+                                    comments: 'https://news.ycombinator.com/item?id=8075880'
+                                -
+                                    title: 'Show HN: Balances ? Mint for Bitcoin and other cryptocurrencies'
+                                    url: 'https://balances.io'
+                                    comments: 'https://news.ycombinator.com/item?id=8075959'
+                                -
+                                    title: 'Paletton ? Color Scheme Designer'
+                                    url: 'http://www.paletton.com'
+                                    comments: 'https://news.ycombinator.com/item?id=8074694'
+                                -
+                                    title: 'Open Name System: Extending DNS with the Blockchain'
+                                    url: 'http://opennamesystem.org'
+                                    comments: 'https://news.ycombinator.com/item?id=8074517'
+                                -
+                                    title: 'The Most Terrifying Thought Experiment of All Time'
+                                    url: 'http://www.slate.com/articles/technology/bitwise/2014/07/roko_s_basilisk_the_most_terrifying_thought_experiment_of_all_time.single.html'
+                                    comments: 'https://news.ycombinator.com/item?id=8078494'
+                                -
+                                    title: 'SpaceX Soft Lands Falcon 9 Rocket First Stage'
+                                    url: 'http://www.spacex.com/news/2014/07/22/spacex-soft-lands-falcon-9-rocket-first-stage'
+                                    comments: 'https://news.ycombinator.com/item?id=8071070'
+                                -
+                                    title: 'Netflix''s Open Connect Appliances'
+                                    url: 'http://gizmodo.com/this-box-can-hold-an-entire-netflix-1592590450'
+                                    comments: 'https://news.ycombinator.com/item?id=8074834'
+                                -
+                                    title: 'How recursion got into programming: a comedy of errors'
+                                    url: 'http://vanemden.wordpress.com/2014/06/18/how-recursion-got-into-programming-a-comedy-of-errors-3/'
+                                    comments: 'https://news.ycombinator.com/item?id=8073361'
+                                -
+                                    title: 'Microsoft lays off thousands with bad memo'
+                                    url: 'http://nymag.com/daily/intelligencer/2014/07/microsoft-lays-off-thousands-with-bad-memo.html'
+                                    comments: 'https://news.ycombinator.com/item?id=8078460'
+                                -
+                                    title: 'The Secret Government Rulebook For Labeling Someone a Terrorist'
+                                    url: 'https://firstlook.org/theintercept/article/2014/07/23/blacklisted/'
+                                    comments: 'https://news.ycombinator.com/item?id=8076221'
+                                -
+                                    title: 'William Shatner reviews Facebook Mentions'
+                                    url: 'http://williamshatner.tumblr.com/post/92551992485/facebook-mentions-versus-facebook-pages-apps'
+                                    comments: 'https://news.ycombinator.com/item?id=8072387'
+                                -
+                                    title: 'Apple Confirms ?Back Doors?, Downplays Their Severity'
+                                    url: 'http://www.zdziarski.com/blog/?p=3466'
+                                    comments: 'https://news.ycombinator.com/item?id=8074654'
+                                -
+                                    title: 'Polygon sat down with one of the creators of Dwarf Fortress'
+                                    url: 'http://www.polygon.com/2014/7/23/5926447/dwarf-fortress-will-crush-your-cpu-because-creating-history-is-hard'
+                                    comments: 'https://news.ycombinator.com/item?id=8075534'

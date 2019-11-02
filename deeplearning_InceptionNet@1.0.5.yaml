@@ -1,58 +1,57 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "InceptionNet"
-    description: "Automatically tag images with InceptionNet"
-    version: "1.0.5"
-    license: 
-      name: "gpl3"
-  paths: 
-    /deeplearning/InceptionNet/1.0.5: 
-      post: 
-        summary: "Run InceptionNet"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"http://i.imgur.com/YKDmneL.jpg\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    tags: 
-                      type: "array"
-                      items: 
-                        type: "object"
-                        properties: 
-                          class: 
-                            type: "string"
-                          confidence: 
-                            type: "number"
-                        required: 
-                          - "class"
-                          - "confidence"
-                example: 
-                  tags: 
-                    - 
-                      class: "Samoyed, Samoyede"
-                      confidence: 0.8956906795501709
-                    - 
-                      class: "keeshond"
-                      confidence: 0.004031287971884012
-                    - 
-                      class: "Pomeranian"
-                      confidence: 0.0023821250069886446
-                    - 
-                      class: "Eskimo dog, husky"
-                      confidence: 0.001681338995695114
-                    - 
-                      class: "white wolf, Arctic wolf, Canis lupus tundrarum"
-                      confidence: 0.001190228504128754
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: InceptionNet
+    description: 'Automatically tag images with InceptionNet'
+    version: 1.0.5
+    license:
+        name: gpl3
+paths:
+    /deeplearning/InceptionNet/1.0.5:
+        post:
+            summary: 'Run InceptionNet'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"http://i.imgur.com/YKDmneL.jpg"'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    tags:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                class:
+                                                    type: string
+                                                confidence:
+                                                    type: number
+                                            required:
+                                                - class
+                                                - confidence
+                            example:
+                                tags:
+                                    -
+                                        class: 'Samoyed, Samoyede'
+                                        confidence: 0.8956906795501709
+                                    -
+                                        class: keeshond
+                                        confidence: 0.004031287971884012
+                                    -
+                                        class: Pomeranian
+                                        confidence: 0.0023821250069886446
+                                    -
+                                        class: 'Eskimo dog, husky'
+                                        confidence: 0.001681338995695114
+                                    -
+                                        class: 'white wolf, Arctic wolf, Canis lupus tundrarum'
+                                        confidence: 0.001190228504128754

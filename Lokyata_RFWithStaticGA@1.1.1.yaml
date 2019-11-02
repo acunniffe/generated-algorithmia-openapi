@@ -1,93 +1,92 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "RF - Production"
-    description: "RF With GA Output. Calc GA by reading from csv file which is faster than calculating GAC matrix each time."
-    version: "1.1.1"
-    license: 
-      name: "apl"
-  paths: 
-    /Lokyata/RFWithStaticGA/1.1.1: 
-      post: 
-        summary: "Run RFWithStaticGA"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "object"
-                properties: 
-                  orangeMoneySeniority: 
-                    type: "number"
-                  mobileAccountSeniority: 
-                    type: "number"
-                  totalNumOfRecharges: 
-                    type: "number"
-                  totalValOfRecharges: 
-                    type: "number"
-                  voiceOverTotalRecharges: 
-                    type: "number"
-                  eRechargeOverTotalRecharges: 
-                    type: "number"
-                  totalValOfCashins: 
-                    type: "number"
-                  totalRechargesOverTotalCashins: 
-                    type: "number"
-                  totalCashFlow: 
-                    type: "number"
-                  totalCashFlowOverTotalCashins: 
-                    type: "number"
-                  totalNumOfCashTransactions: 
-                    type: "number"
-                  tRchrgNumOverTcashTransNum: 
-                    type: "number"
-                  gender: 
-                    type: "number"
-                  maritalStatus: 
-                    type: "number"
-                  location: 
-                    type: "number"
-                  m3_numberOfCashins: 
-                    type: "number"
-                  averageBalance: 
-                    type: "number"
-                  m3_totalCashins: 
-                    type: "number"
-                  numberofSuccessfulLoans: 
-                    type: "number"
-                  age: 
-                    type: "number"
-                  daysAccountOpen: 
-                    type: "number"
-              example: 
-                orangeMoneySeniority: 18
-                mobileAccountSeniority: 16
-                totalNumOfRecharges: 5
-                totalValOfRecharges: 4
-                voiceOverTotalRecharges: 1
-                eRechargeOverTotalRecharges: 13
-                totalValOfCashins: 18
-                totalRechargesOverTotalCashins: 1
-                totalCashFlow: 19
-                totalCashFlowOverTotalCashins: 10
-                totalNumOfCashTransactions: 20
-                tRchrgNumOverTcashTransNum: 1
-                gender: 2
-                maritalStatus: 1
-                location: 2
-                m3_numberOfCashins: 0
-                averageBalance: 0
-                m3_totalCashins: 0
-                numberofSuccessfulLoans: 0
-                age: 16.2
-                daysAccountOpen: 0
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              schema: 
-                text/plain: 
-                  type: "string"
-              example: "Exception encountered while running sample input"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'RF - Production'
+    description: 'RF With GA Output. Calc GA by reading from csv file which is faster than calculating GAC matrix each time.'
+    version: 1.1.1
+    license:
+        name: apl
+paths:
+    /Lokyata/RFWithStaticGA/1.1.1:
+        post:
+            summary: 'Run RFWithStaticGA'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                orangeMoneySeniority:
+                                    type: number
+                                mobileAccountSeniority:
+                                    type: number
+                                totalNumOfRecharges:
+                                    type: number
+                                totalValOfRecharges:
+                                    type: number
+                                voiceOverTotalRecharges:
+                                    type: number
+                                eRechargeOverTotalRecharges:
+                                    type: number
+                                totalValOfCashins:
+                                    type: number
+                                totalRechargesOverTotalCashins:
+                                    type: number
+                                totalCashFlow:
+                                    type: number
+                                totalCashFlowOverTotalCashins:
+                                    type: number
+                                totalNumOfCashTransactions:
+                                    type: number
+                                tRchrgNumOverTcashTransNum:
+                                    type: number
+                                gender:
+                                    type: number
+                                maritalStatus:
+                                    type: number
+                                location:
+                                    type: number
+                                m3_numberOfCashins:
+                                    type: number
+                                averageBalance:
+                                    type: number
+                                m3_totalCashins:
+                                    type: number
+                                numberofSuccessfulLoans:
+                                    type: number
+                                age:
+                                    type: number
+                                daysAccountOpen:
+                                    type: number
+                        example:
+                            orangeMoneySeniority: 18
+                            mobileAccountSeniority: 16
+                            totalNumOfRecharges: 5
+                            totalValOfRecharges: 4
+                            voiceOverTotalRecharges: 1
+                            eRechargeOverTotalRecharges: 13
+                            totalValOfCashins: 18
+                            totalRechargesOverTotalCashins: 1
+                            totalCashFlow: 19
+                            totalCashFlowOverTotalCashins: 10
+                            totalNumOfCashTransactions: 20
+                            tRchrgNumOverTcashTransNum: 1
+                            gender: 2
+                            maritalStatus: 1
+                            location: 2
+                            m3_numberOfCashins: 0
+                            averageBalance: 0
+                            m3_totalCashins: 0
+                            numberofSuccessfulLoans: 0
+                            age: 16.2
+                            daysAccountOpen: 0
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        schema:
+                            text/plain:
+                                type: string
+                        example: 'Exception encountered while running sample input'

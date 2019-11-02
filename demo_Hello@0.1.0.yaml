@@ -1,28 +1,28 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Hello World"
-    version: "0.1.0"
-    license: 
-      name: "apl"
-  paths: 
-    /demo/Hello/0.1.0: 
-      post: 
-        summary: "Run Hello"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"demo\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              schema: 
-                text/plain: 
-                  type: "string"
-              example: "\"Hello demo\""
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Hello World'
+    description: null
+    version: 0.1.0
+    license:
+        name: apl
+paths:
+    /demo/Hello/0.1.0:
+        post:
+            summary: 'Run Hello'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"demo"'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        schema:
+                            text/plain:
+                                type: string
+                        example: '"Hello demo"'

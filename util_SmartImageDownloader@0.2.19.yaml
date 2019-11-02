@@ -1,69 +1,68 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Smart Image Downloader"
-    description: "A fast and easy way to parse image links"
-    version: "0.2.19"
-    license: 
-      name: "apl"
-  paths: 
-    /util/SmartImageDownloader/0.2.19: 
-      post: 
-        summary: "Run SmartImageDownloader"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "object"
-                properties: 
-                  image: 
-                    type: "string"
-                  resize: 
-                    type: "number"
-              example: 
-                image: "https://en.wikipedia.org/wiki/Barack_Obama#/media/File:President_Barack_Obama.jpg"
-                resize: 600
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    originalDimensions: 
-                      type: "array"
-                      items: 
-                        type: "object"
-                        properties: 
-                          height: 
-                            type: "number"
-                          width: 
-                            type: "number"
-                    resizedDimensions: 
-                      type: "array"
-                      items: 
-                        type: "object"
-                        properties: 
-                          height: 
-                            type: "number"
-                          width: 
-                            type: "number"
-                    savePath: 
-                      type: "array"
-                      items: 
-                        type: "string"
-                example: 
-                  originalDimensions: 
-                    - 
-                      height: 3356
-                      width: 2687
-                  resizedDimensions: 
-                    - 
-                      height: 600
-                      width: 480
-                  savePath: 
-                    - "data://.algo/util/SmartImageDownloader/temp/ff5b21f1-cf2a-4586-a47a-7f2d2a3b7586.jpg"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Smart Image Downloader'
+    description: 'A fast and easy way to parse image links'
+    version: 0.2.19
+    license:
+        name: apl
+paths:
+    /util/SmartImageDownloader/0.2.19:
+        post:
+            summary: 'Run SmartImageDownloader'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                image:
+                                    type: string
+                                resize:
+                                    type: number
+                        example:
+                            image: 'https://en.wikipedia.org/wiki/Barack_Obama#/media/File:President_Barack_Obama.jpg'
+                            resize: 600
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    originalDimensions:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                height:
+                                                    type: number
+                                                width:
+                                                    type: number
+                                    resizedDimensions:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                height:
+                                                    type: number
+                                                width:
+                                                    type: number
+                                    savePath:
+                                        type: array
+                                        items:
+                                            type: string
+                            example:
+                                originalDimensions:
+                                    -
+                                        height: 3356
+                                        width: 2687
+                                resizedDimensions:
+                                    -
+                                        height: 600
+                                        width: 480
+                                savePath:
+                                    - 'data://.algo/util/SmartImageDownloader/temp/ff5b21f1-cf2a-4586-a47a-7f2d2a3b7586.jpg'

@@ -1,96 +1,95 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Face Detection"
-    description: "This algorithm detects human faces in given images."
-    version: "0.2.1"
-    license: 
-      name: "apl"
-  paths: 
-    /dlib/FaceDetection/0.2.1: 
-      post: 
-        summary: "Run FaceDetection"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "object"
-                properties: 
-                  images: 
-                    type: "array"
-                    items: 
-                      type: "object"
-                      properties: 
-                        url: 
-                          type: "string"
-                        output: 
-                          type: "string"
-              example: 
-                images: 
-                  - 
-                    url: "https://en.wikipedia.org/wiki/Barack_Obama#/media/File:DIG13623-230.jpg"
-                    output: "data://.algo/temp/detected_faces.png"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    images: 
-                      type: "array"
-                      items: 
-                        type: "object"
-                        properties: 
-                          detected_faces: 
-                            type: "array"
-                            items: 
-                              type: "object"
-                              properties: 
-                                bottom: 
-                                  type: "number"
-                                left: 
-                                  type: "number"
-                                right: 
-                                  type: "number"
-                                top: 
-                                  type: "number"
-                              required: 
-                                - "bottom"
-                                - "left"
-                                - "right"
-                                - "top"
-                          imageDimensions: 
-                            type: "object"
-                            properties: 
-                              height: 
-                                type: "number"
-                              width: 
-                                type: "number"
-                          output: 
-                            type: "string"
-                          url: 
-                            type: "string"
-                example: 
-                  images: 
-                    - 
-                      detected_faces: 
-                        - 
-                          bottom: 848
-                          left: 1703
-                          right: 2024
-                          top: 527
-                        - 
-                          bottom: 811
-                          left: 399
-                          right: 861
-                          top: 348
-                      imageDimensions: 
-                        height: 3137
-                        width: 2826
-                      output: "data://.algo/temp/detected_faces.png"
-                      url: "https://en.wikipedia.org/wiki/Barack_Obama#/media/File:DIG13623-230.jpg"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Face Detection'
+    description: 'This algorithm detects human faces in given images.'
+    version: 0.2.1
+    license:
+        name: apl
+paths:
+    /dlib/FaceDetection/0.2.1:
+        post:
+            summary: 'Run FaceDetection'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                images:
+                                    type: array
+                                    items:
+                                        type: object
+                                        properties:
+                                            url:
+                                                type: string
+                                            output:
+                                                type: string
+                        example:
+                            images:
+                                -
+                                    url: 'https://en.wikipedia.org/wiki/Barack_Obama#/media/File:DIG13623-230.jpg'
+                                    output: 'data://.algo/temp/detected_faces.png'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    images:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                detected_faces:
+                                                    type: array
+                                                    items:
+                                                        type: object
+                                                        properties:
+                                                            bottom:
+                                                                type: number
+                                                            left:
+                                                                type: number
+                                                            right:
+                                                                type: number
+                                                            top:
+                                                                type: number
+                                                        required:
+                                                            - bottom
+                                                            - left
+                                                            - right
+                                                            - top
+                                                imageDimensions:
+                                                    type: object
+                                                    properties:
+                                                        height:
+                                                            type: number
+                                                        width:
+                                                            type: number
+                                                output:
+                                                    type: string
+                                                url:
+                                                    type: string
+                            example:
+                                images:
+                                    -
+                                        detected_faces:
+                                            -
+                                                bottom: 848
+                                                left: 1703
+                                                right: 2024
+                                                top: 527
+                                            -
+                                                bottom: 811
+                                                left: 399
+                                                right: 861
+                                                top: 348
+                                        imageDimensions:
+                                            height: 3137
+                                            width: 2826
+                                        output: 'data://.algo/temp/detected_faces.png'
+                                        url: 'https://en.wikipedia.org/wiki/Barack_Obama#/media/File:DIG13623-230.jpg'

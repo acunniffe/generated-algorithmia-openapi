@@ -1,69 +1,68 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Text Similarity"
-    description: "Find the most similar text files within a collection of documents"
-    version: "1.0.0"
-    license: 
-      name: "apl"
-  paths: 
-    /PetiteProgrammer/TextSimilarity/1.0.0: 
-      post: 
-        summary: "Run TextSimilarity"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "object"
-                properties: 
-                  files: 
-                    type: "array"
-                    items: 
-                      type: "array"
-              example: 
-                files: 
-                  - 
-                    - "doc1"
-                    - "this is an example input"
-                  - 
-                    - "doc2"
-                    - "this is another example input"
-                  - 
-                    - "doc3"
-                    - "the third document is not like the others"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "object"
-                    properties: 
-                      document1: 
-                        type: "string"
-                      document2: 
-                        type: "string"
-                      similarity: 
-                        type: "number"
-                    required: 
-                      - "document1"
-                      - "document2"
-                      - "similarity"
-                example: 
-                  - 
-                    document1: "doc1"
-                    document2: "doc2"
-                    similarity: 0.6825611979794715
-                  - 
-                    document1: "doc2"
-                    document2: "doc3"
-                    similarity: 0.1303428532021811
-                  - 
-                    document1: "doc1"
-                    document2: "doc3"
-                    similarity: 0.057146844312582934
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Text Similarity'
+    description: 'Find the most similar text files within a collection of documents'
+    version: 1.0.0
+    license:
+        name: apl
+paths:
+    /PetiteProgrammer/TextSimilarity/1.0.0:
+        post:
+            summary: 'Run TextSimilarity'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                files:
+                                    type: array
+                                    items:
+                                        type: array
+                        example:
+                            files:
+                                -
+                                    - doc1
+                                    - 'this is an example input'
+                                -
+                                    - doc2
+                                    - 'this is another example input'
+                                -
+                                    - doc3
+                                    - 'the third document is not like the others'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                        document1:
+                                            type: string
+                                        document2:
+                                            type: string
+                                        similarity:
+                                            type: number
+                                    required:
+                                        - document1
+                                        - document2
+                                        - similarity
+                            example:
+                                -
+                                    document1: doc1
+                                    document2: doc2
+                                    similarity: 0.6825611979794715
+                                -
+                                    document1: doc2
+                                    document2: doc3
+                                    similarity: 0.1303428532021811
+                                -
+                                    document1: doc1
+                                    document2: doc3
+                                    similarity: 0.057146844312582934

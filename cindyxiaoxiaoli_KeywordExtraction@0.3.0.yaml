@@ -1,34 +1,33 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Keyword Extraction"
-    description: "Keyword/KeyPhrase Extraction from Sentence"
-    version: "0.3.0"
-    license: 
-      name: "apl"
-  paths: 
-    /cindyxiaoxiaoli/KeywordExtraction/0.3.0: 
-      post: 
-        summary: "Run KeywordExtraction"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"I really like the pictures listed on their mobile website and I also like the customer service.\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "string"
-                example: 
-                  - "pictures"
-                  - "mobile website"
-                  - "customer service"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Keyword Extraction'
+    description: 'Keyword/KeyPhrase Extraction from Sentence'
+    version: 0.3.0
+    license:
+        name: apl
+paths:
+    /cindyxiaoxiaoli/KeywordExtraction/0.3.0:
+        post:
+            summary: 'Run KeywordExtraction'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"I really like the pictures listed on their mobile website and I also like the customer service."'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: string
+                            example:
+                                - pictures
+                                - 'mobile website'
+                                - 'customer service'

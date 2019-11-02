@@ -1,81 +1,81 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Named Entity Recognition"
-    version: "0.2.0"
-    license: 
-      name: "apl"
-  paths: 
-    /StanfordNLP/NamedEntityRecognition/0.2.0: 
-      post: 
-        summary: "Run NamedEntityRecognition"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "object"
-                properties: 
-                  document: 
-                    type: "string"
-              example: 
-                document: "Jim went to Stanford University, Tom went to the University of Washington. They both work for Microsoft."
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    sentences: 
-                      type: "array"
-                      items: 
-                        type: "object"
-                        properties: 
-                          detectedEntities: 
-                            type: "array"
-                            items: 
-                              type: "object"
-                              properties: 
-                                word: 
-                                  type: "string"
-                                entity: 
-                                  type: "string"
-                              required: 
-                                - "word"
-                                - "entity"
-                        required: 
-                          - "detectedEntities"
-                example: 
-                  sentences: 
-                    - 
-                      detectedEntities: 
-                        - 
-                          word: "Jim"
-                          entity: "PERSON"
-                        - 
-                          word: "Stanford"
-                          entity: "ORGANIZATION"
-                        - 
-                          word: "University"
-                          entity: "ORGANIZATION"
-                        - 
-                          word: "Tom"
-                          entity: "PERSON"
-                        - 
-                          word: "University"
-                          entity: "ORGANIZATION"
-                        - 
-                          word: "of"
-                          entity: "ORGANIZATION"
-                        - 
-                          word: "Washington"
-                          entity: "ORGANIZATION"
-                    - 
-                      detectedEntities: 
-                        - 
-                          word: "Microsoft"
-                          entity: "ORGANIZATION"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Named Entity Recognition'
+    description: null
+    version: 0.2.0
+    license:
+        name: apl
+paths:
+    /StanfordNLP/NamedEntityRecognition/0.2.0:
+        post:
+            summary: 'Run NamedEntityRecognition'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                document:
+                                    type: string
+                        example:
+                            document: 'Jim went to Stanford University, Tom went to the University of Washington. They both work for Microsoft.'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    sentences:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                detectedEntities:
+                                                    type: array
+                                                    items:
+                                                        type: object
+                                                        properties:
+                                                            word:
+                                                                type: string
+                                                            entity:
+                                                                type: string
+                                                        required:
+                                                            - word
+                                                            - entity
+                                            required:
+                                                - detectedEntities
+                            example:
+                                sentences:
+                                    -
+                                        detectedEntities:
+                                            -
+                                                word: Jim
+                                                entity: PERSON
+                                            -
+                                                word: Stanford
+                                                entity: ORGANIZATION
+                                            -
+                                                word: University
+                                                entity: ORGANIZATION
+                                            -
+                                                word: Tom
+                                                entity: PERSON
+                                            -
+                                                word: University
+                                                entity: ORGANIZATION
+                                            -
+                                                word: of
+                                                entity: ORGANIZATION
+                                            -
+                                                word: Washington
+                                                entity: ORGANIZATION
+                                    -
+                                        detectedEntities:
+                                            -
+                                                word: Microsoft
+                                                entity: ORGANIZATION

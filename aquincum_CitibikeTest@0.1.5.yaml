@@ -1,27 +1,28 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "CitibikeTest"
-    version: "0.1.5"
-    license: 
-      name: "apl"
-  paths: 
-    /aquincum/CitibikeTest/0.1.5: 
-      post: 
-        summary: "Run CitibikeTest"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "{u'_self': u'dbs/WuV7AA==/colls/WuV7AMz44wA=/docs/WuV7AMz44wDBBQAAAAAAAA==/', u'questionTypeName': u'PredictAvailableBikesInHackathonSep19', u'_ts': 1522252575, u'_rid': u'WuV7AMz44wDBBQAAAAAAAA==', u'questionTypeId': 17, u'_etag': u'\"0c00921e-0000-0000-0000-5abbbb1f0000\"', u'partitionKey': u'23_17427', u'isImmediate': False, u'competitionSourceId': u'23', u'isSample': True, u'time': 1505747773667, u'answerBy': 1505757773667, u'_attachments': u'attachments/', u'data': {u'executionTime': u'2017-07-03 03:23:01 PM', u'stationBeanList': [{u'availableDocks': 38, u'totalDocks': 39, u'city': u'', u'altitude': u'', u'stAddress2': u'', u'longitude': -73.99392888, u'lastCommunicationTime': u'2017-07-03 03:20:37 PM', u'postalCode': u'', u'statusValue': u'In Service', u'testStation': False, u'stAddress1': u'W 52 St & 11 Ave', u'stationName': u'W 52 St & 11 Ave', u'landMark': u'', u'latitude': 40.76727216, u'statusKey': 1, u'availableBikes': 0, u'id': 72, u'location': u''}]}, u'id': u'603848ae-a8c0-449e-49bf-9c1716c42acf', u'questionToken': u'uqF6hibDqNOhQetnhLRQSHaY85yjGTAMWLc41o6WwQO7WiI1moE8tmX839OJUFwX', u'actualTime': 1505747773667}"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              schema: 
-                text/plain: 
-                  type: "string"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: CitibikeTest
+    description: null
+    version: 0.1.5
+    license:
+        name: apl
+paths:
+    /aquincum/CitibikeTest/0.1.5:
+        post:
+            summary: 'Run CitibikeTest'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '{u''_self'': u''dbs/WuV7AA==/colls/WuV7AMz44wA=/docs/WuV7AMz44wDBBQAAAAAAAA==/'', u''questionTypeName'': u''PredictAvailableBikesInHackathonSep19'', u''_ts'': 1522252575, u''_rid'': u''WuV7AMz44wDBBQAAAAAAAA=='', u''questionTypeId'': 17, u''_etag'': u''"0c00921e-0000-0000-0000-5abbbb1f0000"'', u''partitionKey'': u''23_17427'', u''isImmediate'': False, u''competitionSourceId'': u''23'', u''isSample'': True, u''time'': 1505747773667, u''answerBy'': 1505757773667, u''_attachments'': u''attachments/'', u''data'': {u''executionTime'': u''2017-07-03 03:23:01 PM'', u''stationBeanList'': [{u''availableDocks'': 38, u''totalDocks'': 39, u''city'': u'''', u''altitude'': u'''', u''stAddress2'': u'''', u''longitude'': -73.99392888, u''lastCommunicationTime'': u''2017-07-03 03:20:37 PM'', u''postalCode'': u'''', u''statusValue'': u''In Service'', u''testStation'': False, u''stAddress1'': u''W 52 St & 11 Ave'', u''stationName'': u''W 52 St & 11 Ave'', u''landMark'': u'''', u''latitude'': 40.76727216, u''statusKey'': 1, u''availableBikes'': 0, u''id'': 72, u''location'': u''''}]}, u''id'': u''603848ae-a8c0-449e-49bf-9c1716c42acf'', u''questionToken'': u''uqF6hibDqNOhQetnhLRQSHaY85yjGTAMWLc41o6WwQO7WiI1moE8tmX839OJUFwX'', u''actualTime'': 1505747773667}'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        schema:
+                            text/plain:
+                                type: string
+                        example: null

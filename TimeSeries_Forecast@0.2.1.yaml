@@ -1,60 +1,60 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Forecast"
-    description: "Gives a forecast the next n steps of a given time series"
-    version: "0.2.1"
-    license: 
-      name: "apl"
-  paths: 
-    /TimeSeries/Forecast/0.2.1: 
-      post: 
-        summary: "Run Forecast"
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                type: "array"
-                items: 
-                  oneOf: 
-                    - 
-                      type: "array"
-                    - 
-                      type: "number"
-                    - 
-                      type: "number"
-                    - 
-                      type: "number"
-              example: 
-                - 
-                  - 0
-                  - 1
-                  - 2
-                  - 3
-                  - 4
-                  - 5
-                  - 6
-                  - 7
-                  - 8
-                  - 9
-                  - 10
-                - 5
-                - 2
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "array"
-                  items: 
-                    type: "number"
-                example: 
-                  - 11
-                  - 12
-                  - 13
-                  - 14
-                  - 15
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: Forecast
+    description: 'Gives a forecast the next n steps of a given time series'
+    version: 0.2.1
+    license:
+        name: apl
+paths:
+    /TimeSeries/Forecast/0.2.1:
+        post:
+            summary: 'Run Forecast'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: array
+                            items:
+                                oneOf:
+                                    -
+                                        type: array
+                                    -
+                                        type: number
+                                    -
+                                        type: number
+                                    -
+                                        type: number
+                                required: null
+                        example:
+                            -
+                                - 0
+                                - 1
+                                - 2
+                                - 3
+                                - 4
+                                - 5
+                                - 6
+                                - 7
+                                - 8
+                                - 9
+                                - 10
+                            - 5
+                            - 2
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: number
+                            example:
+                                - 11
+                                - 12
+                                - 13
+                                - 14
+                                - 15

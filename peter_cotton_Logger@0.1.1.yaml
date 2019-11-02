@@ -1,29 +1,28 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Logger"
-    description: "Echos to standard out"
-    version: "0.1.1"
-    license: 
-      name: "apl"
-  paths: 
-    /peter_cotton/Logger/0.1.1: 
-      post: 
-        summary: "Run Logger"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "hello world"
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              schema: 
-                text/plain: 
-                  type: "string"
-              example: "Logging "
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: Logger
+    description: 'Echos to standard out'
+    version: 0.1.1
+    license:
+        name: apl
+paths:
+    /peter_cotton/Logger/0.1.1:
+        post:
+            summary: 'Run Logger'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: 'hello world'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        schema:
+                            text/plain:
+                                type: string
+                        example: 'Logging '

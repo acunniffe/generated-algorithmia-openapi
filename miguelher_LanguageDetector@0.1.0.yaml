@@ -1,36 +1,35 @@
----
-  openapi: "3.0.0"
-  servers: 
-    - 
-      url: "https://algorithmia.com/v1/algo/"
-  info: 
-    title: "Language Detector"
-    description: "Detects language of a given text"
-    version: "0.1.0"
-    license: 
-      name: "apl"
-  paths: 
-    /miguelher/LanguageDetector/0.1.0: 
-      post: 
-        summary: "Run LanguageDetector"
-        requestBody: 
-          content: 
-            schema: 
-              text/plain: 
-                type: "string"
-            example: "\"type your input and check the result!\""
-        responses: 
-          200: 
-            description: "Algorithm Success"
-            content: 
-              application/json: 
-                schema: 
-                  type: "object"
-                  properties: 
-                    confidence: 
-                      type: "number"
-                    result: 
-                      type: "string"
-                example: 
-                  confidence: 0.9999999998723433
-                  result: "en"
+openapi: 3.0.0
+servers:
+    -
+        url: 'https://algorithmia.com/v1/algo/'
+info:
+    title: 'Language Detector'
+    description: 'Detects language of a given text'
+    version: 0.1.0
+    license:
+        name: apl
+paths:
+    /miguelher/LanguageDetector/0.1.0:
+        post:
+            summary: 'Run LanguageDetector'
+            requestBody:
+                content:
+                    schema:
+                        text/plain:
+                            type: string
+                    example: '"type your input and check the result!"'
+            responses:
+                '200':
+                    description: 'Algorithm Success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    confidence:
+                                        type: number
+                                    result:
+                                        type: string
+                            example:
+                                confidence: 0.9999999998723433
+                                result: en
